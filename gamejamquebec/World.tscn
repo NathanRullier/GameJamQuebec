@@ -27,14 +27,6 @@ sources/0 = SubResource("TileSetAtlasSource_ug2d4")
 [node name="World" type="Node2D"]
 script = ExtResource("1_ym6gk")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_mask = 3
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(161, 32)
-shape = SubResource("RectangleShape2D_c4chj")
-debug_color = Color(0.169469, 0.522839, 0.981621, 0.42)
-
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(176, 78)
 scale = Vector2(0.574468, 0.564815)
@@ -54,7 +46,6 @@ format = 2
 
 [node name="Camera2D" parent="." instance=ExtResource("10")]
 position = Vector2(168, 80)
-zoom = Vector2(3, 3)
 
 [node name="TopLeft" parent="Camera2D/Limits" index="0"]
 position = Vector2(-32, -32)

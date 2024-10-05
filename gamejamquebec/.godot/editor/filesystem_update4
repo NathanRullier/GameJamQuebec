@@ -1,11 +1,7 @@
 res://default_env.tres
 res://World.tscn
-<<<<<<< Updated upstream
-res://test_map.tscn
-res://Player/Player.tscn
-res://Tiles/Wall_Square.tscn
-res://Tiles/Wall_Bush.tscn
-=======
 res://Effects/HitEffect.tscn
 res://GestionGroupeNode_WorldMain.gd
->>>>>>> Stashed changes
+res://Enemies/Bat.gd
+res://World/Grass.gd
+res://Player/Player.gd
