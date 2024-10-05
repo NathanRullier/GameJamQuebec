@@ -1,10 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1vx26sspg70f"]
+[gd_scene load_steps=3 format=3 uid="uid://b1vx26sspg70f"]
+
+[ext_resource type="Texture2D" uid="uid://c5sxqxaea2ovm" path="res://World/Bush.png" id="1_pfgqp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5te3p"]
 size = Vector2(32, 32)
 
 [node name="Node2D" type="Node2D"]
-visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -14,4 +15,4 @@ shape = SubResource("RectangleShape2D_5te3p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(16, -16)
-scale = Vector2(2, 2)
+texture = ExtResource("1_pfgqp")
