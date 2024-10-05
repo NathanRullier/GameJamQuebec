@@ -48,6 +48,9 @@ func attempt_switch_sets():
 		print("Impossible de changer de set : la position est occupée.")
 		
 func sets_switch():
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	
 	# Inverser l'état des deux sets
 	toggle_set(setHero, !setHero.visible)
 	toggle_set(setHisto, !setHisto.visible)
@@ -88,16 +91,18 @@ func toggle_set(set_node, is_active):
 	set_node.process_mode = Node.PROCESS_MODE_INHERIT if is_active else Node.PROCESS_MODE_DISABLED
 
 ##Fonction qui dessine en ROUGE a l'écran les vrai zone de collision
-func _draw():
-	# Dessiner les zones de collision de l'ensemble actif
-	var walls = active_set.get_node("Vide").get_children()
-	for wall in walls:
-		var body = wall.get_node("StaticBody2D")
-		if not body:
-			continue  # Ignore les murs sans corps valide
-		
-		var collision_shape = body.get_node("CollisionShape2D").shape
-		if collision_shape is RectangleShape2D:
-			var rect_size = collision_shape.size
-			var rect = Rect2(wall.global_position - rect_size / 2, rect_size)
-			draw_rect(rect, Color(1, 0, 0, 0.5))  # Rouge transparent pour visualiser les murs
+#si on décommente on décommente aussi les queue_redraw() dans la fonction
+# set_switch() et ready()
+#func _draw():
+	#Dessiner les zones de collision de l'ensemble actif
+	#var walls = active_set.get_node("Vide").get_children()
+	#for wall in walls:
+		#var body = wall.get_node("StaticBody2D")
+		#if not body:
+			#continue  # Ignore les murs sans corps valide
+		#
+		#var collision_shape = body.get_node("CollisionShape2D").shape
+		#if collision_shape is RectangleShape2D:
+			#var rect_size = collision_shape.size
+			#var rect = Rect2(wall.global_position - rect_size / 2, rect_size)
+			#draw_rect(rect, Color(1, 0, 0, 0.5))  # Rouge transparent pour visualiser les murs
