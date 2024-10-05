@@ -1,4 +1,6 @@
 res://default_env.tres
 res://World.tscn
-res://Player/Player.gd
-res://Enemies/Bat.gd
+res://test_map.tscn
+res://Player/Player.tscn
+res://Tiles/Wall_Square.tscn
+res://Tiles/Wall_Bush.tscn

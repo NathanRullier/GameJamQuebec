@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://b5hy5f8dcotvr"]
 
 [ext_resource type="PackedScene" path="res://World/Bush.tscn" id="1"]
-[ext_resource type="PackedScene" path="res://Player/Player.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://d1jowjeb0rva6" path="res://Player/Player.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://dxhonshdm0cdb" path="res://World/GrassBackground.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://cjjiekhls4k8v" path="res://World/DirtTileset.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://d4mbhglaje7yj" path="res://World/CliffTileset.png" id="5"]
@@ -28,17 +28,19 @@ sources/0 = SubResource("TileSetAtlasSource_ug2d4")
 
 [node name="World" type="Node2D"]
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(161, 32)
+shape = SubResource("RectangleShape2D_c4chj")
+debug_color = Color(0.169469, 0.522839, 0.981621, 0.42)
+
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(160, 90)
 texture = ExtResource("3")
 region_enabled = true
 region_rect = Rect2(0, 0, 752, 432)
-
-[node name="Bloc" type="Node2D" parent="."]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bloc"]
-position = Vector2(161, 32)
-shape = SubResource("RectangleShape2D_c4chj")
 
 [node name="DirtPathTileMap" type="TileMap" parent="."]
 tile_set = SubResource("1")
@@ -50,6 +52,7 @@ format = 2
 
 [node name="Camera2D" parent="." instance=ExtResource("10")]
 position = Vector2(168, 80)
+zoom = Vector2(3, 3)
 
 [node name="TopLeft" parent="Camera2D/Limits" index="0"]
 position = Vector2(-32, -32)

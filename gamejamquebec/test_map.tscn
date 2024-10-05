@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://j6f4xe3gi4q5"]
+
+[ext_resource type="PackedScene" uid="uid://d1jowjeb0rva6" path="res://Player/Player.tscn" id="1_nqu3f"]
+[ext_resource type="PackedScene" uid="uid://b1vx26sspg70f" path="res://Tiles/Wall_Bush.tscn" id="2_qpi1n"]
+
+[node name="mapMap" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_nqu3f")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="Bushes" type="Node2D" parent="."]
+
+[node name="Node2D5" parent="Bushes" instance=ExtResource("2_qpi1n")]
+position = Vector2(-40, 64)
+
+[node name="Node2D4" parent="Bushes" instance=ExtResource("2_qpi1n")]
+position = Vector2(-8, 64)
+
+[node name="Node2D3" parent="Bushes" instance=ExtResource("2_qpi1n")]
+position = Vector2(24, 64)
+
+[node name="Node2D2" parent="Bushes" instance=ExtResource("2_qpi1n")]
+position = Vector2(24, 32)
+
+[node name="Node2D" parent="Bushes" instance=ExtResource("2_qpi1n")]
+position = Vector2(24, 0)
