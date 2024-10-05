@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bo7plbm2b2xcf"]
+[gd_scene load_steps=12 format=3 uid="uid://bo7plbm2b2xcf"]
 
 [ext_resource type="Script" path="res://scene_nic.gd" id="1_6mf3n"]
 [ext_resource type="Texture2D" uid="uid://bsbscumll0c83" path="res://Level design/Room 0 Hero.png" id="1_7ep0r"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://chpo583bdwpiq" path="res://Level design/Room 2 Historien.png.png" id="4_xkn3w"]
 [ext_resource type="PackedScene" uid="uid://d1jowjeb0rva6" path="res://Player/Player.tscn" id="7_8du3y"]
 [ext_resource type="Texture2D" uid="uid://dm0m6xwb1kgho" path="res://Tiles/FG_Cellar Tileset_3.png.png" id="8_jg6m1"]
+[ext_resource type="PackedScene" uid="uid://b1vx26sspg70f" path="res://Tiles/Wall_Bush.tscn" id="9_xngyg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1dahj"]
 texture = ExtResource("8_jg6m1")
@@ -246,7 +247,9 @@ texture = ExtResource("8_jg6m1")
 31:7/0 = 0
 0:8/0 = 0
 1:8/0 = 0
+2:8/next_alternative_id = 2
 2:8/0 = 0
+2:8/1 = 1
 3:8/0 = 0
 4:8/0 = 0
 5:8/0 = 0
@@ -899,27 +902,249 @@ position = Vector2(568, 416)
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
 
-[node name="Histo POV" type="Node2D" parent="."]
+[node name="Niveau 2" type="Node2D" parent="."]
 
-[node name="TileMap" type="TileMap" parent="Histo POV"]
-position = Vector2(648, 72)
-scale = Vector2(2, 2)
-tile_set = SubResource("TileSet_gocel")
-format = 2
-layer_0/name = "Ground"
-layer_0/z_index = -1
-layer_0/tile_data = PackedInt32Array(-196604, 458752, 0, -131068, 524288, 5, -131070, 655360, 3, -131071, 655360, 3, -131072, 655360, 3, -65544, 655360, 3, -131082, 327680, 0, -65546, 393216, 5, -10, 131072, 1, 65526, 655360, 3, 131062, 655360, 12, 196598, 720896, 6, 262134, 655360, 3, 327670, 655360, 3, 393206, 655360, 12, 458742, 655360, 3, 589814, 655360, 3, 524278, 655360, 3, 655350, 655360, 12, 720886, 655360, 3, -65532, 131072, 1, 4, 131072, 1, 65540, 131072, 1, 131076, 655360, 3, 196612, 655360, 3, 262148, 655360, 3, 327684, 655360, 3, 393220, 655360, 3, 786422, 327680, 3, 786423, 655360, 3, 786424, 655360, 3, 786425, 655360, 3, 786426, 131072, 1, 786427, 131072, 1, 786428, 655360, 3, 786429, 655360, 3, 786430, 655360, 3, 720892, 917504, 3, 720893, 983040, 3, 720894, 983040, 3, 524289, 655360, 3, 589825, 720896, 3, 655361, 655360, 3, 655362, 720896, 3, 589826, 655360, 3, 524290, 655360, 3, 524291, 655360, 3, 589827, 851968, 3, 655363, 983040, 3, 131075, 720896, 3, 196611, 655360, 3, 262147, 655360, 3, 327683, 917504, 3, 393219, 655360, 3, 458755, 917504, 3, 327677, 851968, 3, 327678, 655360, 3, 393212, 786432, 3, 393213, 655360, 3, 393214, 655360, 3, 393215, 786432, 3, 327680, 983040, 3, 327671, 655360, 3, 327672, 655360, 3, 327673, 655360, 3, 458744, 851968, 3, 458743, 655360, 3, 524279, 786432, 3, 589815, 917504, 3, 589818, 851968, 3, 655354, 655360, 3, 655353, 786432, 3, 720889, 917504, 3, 720888, 917504, 3, 720887, 786432, 3, -65540, 655360, 3, -65539, 655360, 3, -65538, 917504, 3, -2, 851968, 3, 65534, 655360, 3, 131070, 655360, 3, -3, 917504, 3, 65533, 655360, 3, 131069, 655360, 3, 196605, 983040, 3, 196606, 851968, 3, -8, 983040, 3, 65528, 720896, 3, 131064, 655360, 3, 131065, 655360, 3, 196599, 655360, 4, 196600, 983040, 3, 196601, 655360, 3, 196602, 655360, 3, 196603, 655360, 3, 65527, 917504, 3, 458748, 720896, 12, 458749, 655360, 12, 458750, 983040, 12, 458751, 786432, 12, 393216, 655360, 12, 262141, 720896, 12, 262142, 917504, 12, 262135, 655360, 3, 262136, 851968, 12, 262137, 720896, 12, 262138, 786432, 12, 262139, 655360, 12, 131063, 655360, 3, 393207, 655360, 12, 393208, 917504, 12, 393209, 983040, 12, 524280, 786432, 12, 655351, 655360, 12, 720890, 983040, 4, 2, 655360, 3, 65538, 655360, 3, 65537, 786432, 3, 131073, 851968, 3, 131074, 720896, 4, 196609, 786432, 4, -4, 917504, 4, 720900, 458752, 3, 786431, 131072, 1, 720896, 131072, 1, 720897, 655360, 3, 720898, 655360, 3, 720899, 655360, 3, 458756, 655360, 3, 524292, 655360, 3, 589828, 655360, 3, 655364, 655360, 3, 720891, 131072, 1, 655355, 720896, 6, 655356, 720896, 6, 655357, 720896, 6, 655358, 720896, 6, 655359, 720896, 6, 589824, 720896, 6, 655360, 720896, 6, 720895, 720896, 6, 524288, 720896, 6, 458752, 720896, 6, 524287, 720896, 6, 524286, 720896, 6, 589822, 720896, 6, 589823, 720896, 6, 524285, 720896, 6, 589820, 720896, 6, 589819, 720896, 6, 589821, 720896, 6, 524284, 720896, 6, 524283, 720896, 6, 524282, 720896, 6, 524281, 720896, 6, 589817, 720896, 6, 589816, 720896, 6, 655352, 720896, 6, 458745, 720896, 6, 458746, 720896, 6, 458747, 720896, 6, 393218, 720896, 6, 393217, 720896, 6, 458753, 720896, 6, 458754, 720896, 6, 196610, 720896, 6, 262146, 720896, 6, 262145, 720896, 6, 327681, 720896, 6, 327682, 720896, 6, 262144, 720896, 6, 327679, 720896, 6, 262143, 720896, 6, 196608, 720896, 6, 327674, 720896, 6, 393211, 720896, 6, 393210, 720896, 6, 327675, 720896, 6, 327676, 720896, 6, 262140, 720896, 6, 196604, 720896, 6, -9, 720896, 6, -7, 720896, 6, -6, 720896, 6, -5, 720896, 6, 65531, 720896, 6, 65530, 720896, 6, 65529, 720896, 6, 65532, 720896, 6, 131068, 720896, 6, 131067, 720896, 6, 131066, 720896, 6, 131072, 720896, 6, 196607, 720896, 6, 131071, 720896, 6, 65535, 720896, 6, -1, 720896, 6, -65536, 655360, 4, -65535, 655360, 4, -65534, 655360, 4, -65533, 720896, 6, 3, 720896, 6, 65539, 720896, 6, 1, 720896, 6, 0, 720896, 6, 65536, 720896, 6)
-layer_1/name = "Wall"
-layer_1/z_index = 2
-layer_1/tile_data = PackedInt32Array(589814, 851968, 6, 655350, 851968, 6, 720886, 851968, 6, 524278, 851968, 6, 458742, 851968, 6, 393206, 851968, 6, 327670, 851968, 6, 262134, 851968, 6, 196598, 851968, 6, 131062, 851968, 6, 65526, 851968, 6, -10, 851968, 6, -65532, 983040, 6, 4, 983040, 6, 65540, 983040, 6, 131076, 983040, 6, 196612, 983040, 6, 262148, 983040, 6, 327684, 983040, 6, 393220, 983040, 6, 458756, 983040, 6, 524292, 983040, 6, 589828, 983040, 6, 655364, 983040, 6, 720900, 983040, 7, -196604, 983040, 5, -131068, 524288, 5, -131082, 851968, 5, 786422, 851968, 7, 720899, 917504, 7, 720898, 917504, 7, 720897, 917504, 7, 720896, 917504, 7, 786431, 917504, 7, 786430, 917504, 7, 786429, 917504, 7, 786428, 917504, 7, 786427, 917504, 7, 786426, 917504, 7, 786425, 917504, 7, 786424, 917504, 7, 786423, 917504, 7, -65546, 393216, 5)
-layer_2/name = "Bg"
-layer_2/z_index = -2
-layer_2/tile_data = PackedInt32Array(-65537, 458752, 5, -131072, 458752, 5, -131071, 458752, 5, -131070, 458752, 5, -131069, 458752, 5, -65545, 458752, 5, -65544, 458752, 5, -65543, 458752, 5, -65542, 458752, 5, -65541, 458752, 5, -131068, 524288, 5, -65546, 393216, 5, -131081, 393216, 0, -131080, 393216, 0, -131079, 393216, 0, -131078, 393216, 0, -131077, 393216, 0, -131076, 393216, 0, -131075, 393216, 0, -131074, 393216, 0, -131073, 393216, 0, -196608, 393216, 0, -196607, 393216, 0, -196606, 393216, 0, -196605, 393216, 0)
+[node name="Murs" type="Node2D" parent="Niveau 2"]
 
-[node name="Hero POV" type="Node2D" parent="."]
-visible = false
+[node name="Node2D2" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(320, 40)
 
-[node name="TileMap" type="TileMap" parent="Hero POV"]
+[node name="Node2D3" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(320, 136)
+
+[node name="Node2D4" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(320, 104)
+
+[node name="Node2D5" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(320, 200)
+
+[node name="Node2D49" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(456, 464)
+
+[node name="Node2D6" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(320, 168)
+
+[node name="Node2D7" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(320, 264)
+
+[node name="Node2D8" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(320, 232)
+
+[node name="Node2D9" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(320, 328)
+
+[node name="Node2D10" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(320, 296)
+
+[node name="Node2D11" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(320, 392)
+
+[node name="Node2D12" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(320, 360)
+
+[node name="Node2D16" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(320, 72)
+
+[node name="Node2D17" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(320, 8)
+
+[node name="Node2D50" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(352, -8)
+
+[node name="Node2D51" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(384, -8)
+
+[node name="Node2D52" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(416, -8)
+
+[node name="Node2D53" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(448, -8)
+
+[node name="Node2D54" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(480, -8)
+
+[node name="Node2D55" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(512, -8)
+
+[node name="Node2D56" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(544, -8)
+
+[node name="Node2D57" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(576, -8)
+
+[node name="Node2D58" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(608, -8)
+
+[node name="Node2D59" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(640, -8)
+
+[node name="Node2D60" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(672, -8)
+
+[node name="Node2D61" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(704, -8)
+
+[node name="Node2D62" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(736, -8)
+
+[node name="Node2D63" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(768, -8)
+
+[node name="Node2D64" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(784, 8)
+
+[node name="Node2D65" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(776, 0)
+
+[node name="Node2D18" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(488, 464)
+
+[node name="Node2D35" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(520, 464)
+
+[node name="Node2D19" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(392, 464)
+
+[node name="Node2D20" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(424, 464)
+
+[node name="Node2D21" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(360, 464)
+
+[node name="Node2D22" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(320, 424)
+
+[node name="Node2D23" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(320, 456)
+
+[node name="Node2D24" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(328, 456)
+
+[node name="Node2D25" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(784, 72)
+
+[node name="Node2D26" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(784, 40)
+
+[node name="Node2D27" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(784, 136)
+
+[node name="Node2D28" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(784, 104)
+
+[node name="Node2D29" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(784, 200)
+
+[node name="Node2D30" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(784, 168)
+
+[node name="Node2D31" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(784, 264)
+
+[node name="Node2D32" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(784, 232)
+
+[node name="Node2D33" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(784, 328)
+
+[node name="Node2D34" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(784, 296)
+
+[node name="Node2D36" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(784, 360)
+
+[node name="Node2D37" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(584, 464)
+
+[node name="Node2D38" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(552, 464)
+
+[node name="Node2D39" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(648, 464)
+
+[node name="Node2D40" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(616, 464)
+
+[node name="Node2D41" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(712, 464)
+
+[node name="Node2D42" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(680, 464)
+
+[node name="Node2D43" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(776, 456)
+
+[node name="Node2D44" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(744, 464)
+
+[node name="Node2D45" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(784, 424)
+
+[node name="Node2D48" parent="Niveau 2/Murs" instance=ExtResource("9_xngyg")]
+z_index = 3
+position = Vector2(784, 392)
+
+[node name="Hero POV" type="Node2D" parent="Niveau 2"]
+
+[node name="TileMap" type="TileMap" parent="Niveau 2/Hero POV"]
 position = Vector2(552, 392)
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_gocel")
@@ -933,3 +1158,795 @@ layer_1/tile_data = PackedInt32Array(131066, 393216, 10, 131067, 393216, 10, 131
 layer_2/name = "Bg"
 layer_2/z_index = -2
 layer_2/tile_data = PackedInt32Array(-786438, 393216, 7, -786437, 393216, 7, -786436, 393216, 7, -786435, 393216, 7, -786434, 393216, 7, -786433, 393216, 7, -851968, 393216, 7, -851967, 393216, 7, -851966, 393216, 7, -851965, 393216, 7, -851964, 393216, 7, -851963, 393216, 7, -851962, 393216, 7, -851961, 458752, 7, -786439, 327680, 7, -786430, 524288, 12, -786429, 524288, 12, -786428, 524288, 12, -786427, 524288, 12, -786426, 524288, 12, -720902, 524288, 12, -720901, 524288, 12, -720900, 524288, 12, -720899, 524288, 12, -720898, 524288, 12, -786425, 589824, 12, -720903, 458752, 12, -720897, 524288, 12, -786432, 524288, 12, -786431, 524288, 12)
+
+[node name="Vide" type="Node2D" parent="Niveau 2/Hero POV"]
+
+[node name="Node2D" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(488, 168)
+
+[node name="Node2D2" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(456, 168)
+
+[node name="Node2D3" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(456, 200)
+
+[node name="Node2D4" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(488, 200)
+
+[node name="Node2D99" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(520, 200)
+
+[node name="Node2D100" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(552, 200)
+
+[node name="Node2D101" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(584, 200)
+
+[node name="Node2D102" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 200)
+
+[node name="Node2D103" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(648, 200)
+
+[node name="Node2D104" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(680, 200)
+
+[node name="Node2D105" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(520, 232)
+
+[node name="Node2D106" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(488, 232)
+
+[node name="Node2D107" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(456, 232)
+
+[node name="Node2D108" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(360, 232)
+
+[node name="Node2D98" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(424, 232)
+
+[node name="Node2D5" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(424, 168)
+
+[node name="Node2D6" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(392, 168)
+
+[node name="Node2D7" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(392, 200)
+
+[node name="Node2D8" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(424, 200)
+
+[node name="Node2D9" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(424, 104)
+
+[node name="Node2D10" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(392, 104)
+
+[node name="Node2D11" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(392, 136)
+
+[node name="Node2D12" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(424, 136)
+
+[node name="Node2D13" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(584, 104)
+
+[node name="Node2D14" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(552, 104)
+
+[node name="Node2D15" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(552, 136)
+
+[node name="Node2D16" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(584, 136)
+
+[node name="Node2D17" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(584, 40)
+
+[node name="Node2D18" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(552, 40)
+
+[node name="Node2D19" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(552, 72)
+
+[node name="Node2D109" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(520, 104)
+
+[node name="Node2D110" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(520, 40)
+
+[node name="Node2D115" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(456, 40)
+
+[node name="Node2D116" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(424, 40)
+
+[node name="Node2D117" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(392, 40)
+
+[node name="Node2D118" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(360, 40)
+
+[node name="Node2D120" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(360, 72)
+
+[node name="Node2D121" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(328, 72)
+
+[node name="Node2D122" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(360, 104)
+
+[node name="Node2D123" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(328, 104)
+
+[node name="Node2D111" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(520, 72)
+
+[node name="Node2D20" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(584, 72)
+
+[node name="Node2D21" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(648, 72)
+
+[node name="Node2D112" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(680, 72)
+
+[node name="Node2D113" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(680, 40)
+
+[node name="Node2D114" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(776, 40)
+
+[node name="Node2D22" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 72)
+
+[node name="Node2D23" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 104)
+
+[node name="Node2D24" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(648, 104)
+
+[node name="Node2D25" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(648, 136)
+
+[node name="Node2D26" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 136)
+
+[node name="Node2D27" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 168)
+
+[node name="Node2D28" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(648, 168)
+
+[node name="Node2D29" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(712, 104)
+
+[node name="Node2D30" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(680, 104)
+
+[node name="Node2D31" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(680, 136)
+
+[node name="Node2D32" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(712, 136)
+
+[node name="Node2D33" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(776, 104)
+
+[node name="Node2D34" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(744, 104)
+
+[node name="Node2D35" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(744, 136)
+
+[node name="Node2D36" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(776, 136)
+
+[node name="Node2D37" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(776, 168)
+
+[node name="Node2D38" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(744, 168)
+
+[node name="Node2D39" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(744, 200)
+
+[node name="Node2D40" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(776, 200)
+
+[node name="Node2D41" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(776, 264)
+
+[node name="Node2D42" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(744, 264)
+
+[node name="Node2D43" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(744, 296)
+
+[node name="Node2D44" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(776, 296)
+
+[node name="Node2D45" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(712, 264)
+
+[node name="Node2D46" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(680, 264)
+
+[node name="Node2D47" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(680, 296)
+
+[node name="Node2D48" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(712, 296)
+
+[node name="Node2D49" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 264)
+
+[node name="Node2D50" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(584, 264)
+
+[node name="Node2D51" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(584, 296)
+
+[node name="Node2D52" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 296)
+
+[node name="Node2D53" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(488, 296)
+
+[node name="Node2D95" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(520, 296)
+
+[node name="Node2D96" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(552, 296)
+
+[node name="Node2D97" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(552, 264)
+
+[node name="Node2D54" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(456, 296)
+
+[node name="Node2D55" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(456, 328)
+
+[node name="Node2D56" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(488, 328)
+
+[node name="Node2D57" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(424, 296)
+
+[node name="Node2D58" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(392, 296)
+
+[node name="Node2D140" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(360, 264)
+
+[node name="Node2D141" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(328, 264)
+
+[node name="Node2D143" type="Node2D" parent="Niveau 2/Hero POV/Vide"]
+position = Vector2(328, 232)
+
+[node name="Node2D142" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(328, 232)
+
+[node name="Node2D59" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(392, 328)
+
+[node name="Node2D60" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(424, 328)
+
+[node name="Node2D61" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(488, 392)
+
+[node name="Node2D62" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(456, 392)
+
+[node name="Node2D63" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(456, 424)
+
+[node name="Node2D64" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(488, 424)
+
+[node name="Node2D65" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(424, 392)
+
+[node name="Node2D66" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(392, 392)
+
+[node name="Node2D67" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(392, 424)
+
+[node name="Node2D68" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(424, 424)
+
+[node name="Node2D124" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(456, 456)
+
+[node name="Node2D125" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(488, 456)
+
+[node name="Node2D126" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(392, 456)
+
+[node name="Node2D128" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(360, 392)
+
+[node name="Node2D129" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(360, 424)
+
+[node name="Node2D130" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(360, 456)
+
+[node name="Node2D131" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(328, 392)
+
+[node name="Node2D132" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(328, 424)
+
+[node name="Node2D133" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(328, 456)
+
+[node name="Node2D134" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(360, 296)
+
+[node name="Node2D135" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(360, 328)
+
+[node name="Node2D136" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(360, 360)
+
+[node name="Node2D137" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(328, 296)
+
+[node name="Node2D138" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(328, 328)
+
+[node name="Node2D139" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(328, 360)
+
+[node name="Node2D127" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(424, 456)
+
+[node name="Node2D69" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(776, 328)
+
+[node name="Node2D70" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(744, 328)
+
+[node name="Node2D71" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(744, 360)
+
+[node name="Node2D72" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(776, 360)
+
+[node name="Node2D73" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(776, 392)
+
+[node name="Node2D74" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(744, 392)
+
+[node name="Node2D75" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(744, 424)
+
+[node name="Node2D76" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(776, 424)
+
+[node name="Node2D77" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(712, 392)
+
+[node name="Node2D78" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(680, 392)
+
+[node name="Node2D79" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(680, 424)
+
+[node name="Node2D80" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(712, 424)
+
+[node name="Node2D81" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(648, 392)
+
+[node name="Node2D82" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 392)
+
+[node name="Node2D85" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 360)
+
+[node name="Node2D86" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(648, 296)
+
+[node name="Node2D87" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(680, 328)
+
+[node name="Node2D88" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(712, 328)
+
+[node name="Node2D89" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(712, 360)
+
+[node name="Node2D90" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 456)
+
+[node name="Node2D91" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(648, 456)
+
+[node name="Node2D92" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(680, 456)
+
+[node name="Node2D93" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(712, 456)
+
+[node name="Node2D94" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(744, 456)
+
+[node name="Node2D83" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 424)
+
+[node name="Node2D84" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(648, 424)
+
+[node name="Histo POV" type="Node2D" parent="Niveau 2"]
+
+[node name="Vide" type="Node2D" parent="Niveau 2/Histo POV"]
+
+[node name="Vide" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(680, 264)
+
+[node name="Node2D" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(680, 296)
+
+[node name="Vide2" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(712, 264)
+
+[node name="Node2D2" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(712, 296)
+
+[node name="Node2D43" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(680, 328)
+
+[node name="Node2D44" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(712, 328)
+
+[node name="Vide3" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(680, 200)
+
+[node name="Node2D3" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(680, 232)
+
+[node name="Vide4" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(712, 200)
+
+[node name="Node2D4" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(712, 232)
+
+[node name="Vide5" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 200)
+
+[node name="Node2D5" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 232)
+
+[node name="Vide6" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(648, 200)
+
+[node name="Vide35" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(552, 200)
+
+[node name="Vide36" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(584, 200)
+
+[node name="Vide37" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(488, 200)
+
+[node name="Vide38" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(520, 200)
+
+[node name="Vide39" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(424, 200)
+
+[node name="Vide41" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(392, 200)
+
+[node name="Vide42" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(360, 168)
+
+[node name="Vide43" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(328, 168)
+
+[node name="Vide44" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(424, 264)
+
+[node name="Vide45" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(392, 264)
+
+[node name="Vide46" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(360, 264)
+
+[node name="Vide47" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(328, 264)
+
+[node name="Vide48" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(520, 72)
+
+[node name="Vide49" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(488, 72)
+
+[node name="Vide50" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(488, 40)
+
+[node name="Vide51" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(456, 40)
+
+[node name="Vide52" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(712, 72)
+
+[node name="Vide53" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(680, 72)
+
+[node name="Vide54" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(776, 40)
+
+[node name="Vide55" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(744, 40)
+
+[node name="Vide56" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(776, 72)
+
+[node name="Vide57" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(744, 72)
+
+[node name="Vide58" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(776, 104)
+
+[node name="Vide59" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(744, 104)
+
+[node name="Vide62" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(680, 104)
+
+[node name="Vide63" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(712, 168)
+
+[node name="Vide64" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 40)
+
+[node name="Vide65" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(424, 40)
+
+[node name="Vide66" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(360, 40)
+
+[node name="Vide67" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(360, 72)
+
+[node name="Vide68" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(328, 72)
+
+[node name="Vide69" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(328, 40)
+
+[node name="Vide70" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(328, 136)
+
+[node name="Vide71" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(520, 232)
+
+[node name="Vide60" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(776, 136)
+
+[node name="Vide61" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(744, 136)
+
+[node name="Vide40" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(456, 200)
+
+[node name="Node2D6" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(648, 232)
+
+[node name="Vide7" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 296)
+
+[node name="Node2D7" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 328)
+
+[node name="Vide8" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(648, 296)
+
+[node name="Node2D8" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(648, 328)
+
+[node name="Vide9" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(552, 296)
+
+[node name="Node2D9" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(552, 328)
+
+[node name="Vide10" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(584, 296)
+
+[node name="Node2D10" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(584, 328)
+
+[node name="Vide11" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(488, 296)
+
+[node name="Node2D11" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(488, 328)
+
+[node name="Vide12" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(520, 296)
+
+[node name="Node2D12" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(520, 328)
+
+[node name="Vide13" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(488, 360)
+
+[node name="Node2D13" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(488, 392)
+
+[node name="Vide14" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(520, 360)
+
+[node name="Node2D14" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(520, 392)
+
+[node name="Vide15" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(552, 360)
+
+[node name="Node2D15" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(552, 392)
+
+[node name="Vide16" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(584, 360)
+
+[node name="Node2D16" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(584, 392)
+
+[node name="Vide17" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 360)
+
+[node name="Node2D17" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 392)
+
+[node name="Vide18" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(648, 360)
+
+[node name="Node2D18" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(648, 392)
+
+[node name="Vide19" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 424)
+
+[node name="Node2D19" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 456)
+
+[node name="Vide20" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(648, 424)
+
+[node name="Node2D20" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(648, 456)
+
+[node name="Vide21" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(456, 424)
+
+[node name="Node2D21" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(456, 456)
+
+[node name="Vide22" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(488, 424)
+
+[node name="Node2D22" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(488, 456)
+
+[node name="Vide23" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(424, 296)
+
+[node name="Node2D23" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(424, 328)
+
+[node name="Node2D37" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(392, 328)
+
+[node name="Node2D38" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(392, 360)
+
+[node name="Node2D39" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(424, 360)
+
+[node name="Node2D40" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(392, 392)
+
+[node name="Node2D41" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(360, 392)
+
+[node name="Node2D42" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(328, 392)
+
+[node name="Vide24" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(456, 296)
+
+[node name="Node2D24" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(456, 328)
+
+[node name="Vide27" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 136)
+
+[node name="Node2D27" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 168)
+
+[node name="Vide28" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(648, 136)
+
+[node name="Node2D28" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(648, 168)
+
+[node name="Vide29" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 72)
+
+[node name="Node2D29" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(616, 104)
+
+[node name="Vide30" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(648, 72)
+
+[node name="Node2D30" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(648, 104)
+
+[node name="Vide31" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(488, 104)
+
+[node name="Node2D31" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(488, 136)
+
+[node name="Vide32" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(520, 104)
+
+[node name="Node2D32" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(520, 136)
+
+[node name="Vide33" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(424, 72)
+
+[node name="Node2D33" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(424, 104)
+
+[node name="Vide34" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(456, 72)
+
+[node name="Node2D34" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(456, 104)
+
+[node name="Node2D35" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(456, 136)
+
+[node name="Node2D36" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(520, 168)
+
+[node name="Vide25" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(456, 232)
+
+[node name="Node2D25" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(456, 264)
+
+[node name="Vide26" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(488, 232)
+
+[node name="Node2D26" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("9_xngyg")]
+position = Vector2(488, 264)
+
+[node name="TileMap" type="TileMap" parent="Niveau 2/Histo POV"]
+position = Vector2(648, 72)
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_gocel")
+format = 2
+layer_0/name = "Ground"
+layer_0/z_index = -1
+layer_0/tile_data = PackedInt32Array(-196604, 458752, 0, -131068, 524288, 5, -131070, 655360, 3, -131071, 655360, 3, -131072, 655360, 3, -65544, 655360, 3, -131082, 327680, 0, -65546, 393216, 5, -10, 131072, 1, 65526, 655360, 3, 131062, 655360, 12, 196598, 720896, 6, 262134, 655360, 3, 327670, 655360, 3, 393206, 655360, 12, 458742, 655360, 3, 589814, 655360, 3, 524278, 655360, 3, 655350, 655360, 12, 720886, 655360, 3, -65532, 131072, 1, 4, 131072, 1, 65540, 131072, 1, 131076, 655360, 3, 196612, 655360, 3, 262148, 655360, 3, 327684, 655360, 3, 393220, 655360, 3, 786422, 327680, 3, 786423, 655360, 3, 786424, 655360, 3, 786425, 655360, 3, 786426, 131072, 1, 786427, 131072, 1, 786428, 655360, 3, 786429, 655360, 3, 786430, 655360, 3, 720892, 917504, 3, 720893, 983040, 3, 720894, 983040, 3, 524289, 655360, 3, 589825, 720896, 3, 655361, 655360, 3, 655362, 720896, 3, 589826, 655360, 3, 524290, 655360, 3, 524291, 655360, 3, 589827, 851968, 3, 655363, 983040, 3, 131075, 720896, 3, 196611, 655360, 3, 262147, 655360, 3, 327683, 917504, 3, 393219, 655360, 3, 458755, 917504, 3, 327677, 851968, 3, 327678, 655360, 3, 393212, 786432, 3, 393213, 655360, 3, 393214, 655360, 3, 393215, 786432, 3, 327680, 983040, 3, 327671, 655360, 3, 327672, 655360, 3, 327673, 655360, 3, 458744, 851968, 3, 458743, 655360, 3, 524279, 786432, 3, 589815, 917504, 3, 589818, 851968, 3, 655354, 655360, 3, 655353, 786432, 3, 720889, 917504, 3, 720888, 917504, 3, 720887, 786432, 3, -65540, 655360, 3, -65539, 655360, 3, -65538, 917504, 3, -2, 851968, 3, 65534, 655360, 3, 131070, 655360, 3, -3, 917504, 3, 65533, 655360, 3, 131069, 655360, 3, 196605, 983040, 3, 196606, 851968, 3, -8, 983040, 3, 65528, 720896, 3, 131064, 655360, 3, 131065, 655360, 3, 196599, 655360, 4, 196600, 983040, 3, 196601, 655360, 3, 196602, 655360, 3, 196603, 655360, 3, 65527, 917504, 3, 458748, 720896, 12, 458749, 655360, 12, 458750, 983040, 12, 458751, 786432, 12, 393216, 655360, 12, 262141, 720896, 12, 262142, 917504, 12, 262135, 655360, 3, 262136, 851968, 12, 262137, 720896, 12, 262138, 786432, 12, 262139, 655360, 12, 131063, 655360, 3, 393207, 655360, 12, 393208, 917504, 12, 393209, 983040, 12, 524280, 786432, 12, 655351, 655360, 12, 720890, 983040, 4, 2, 655360, 3, 65538, 655360, 3, 65537, 786432, 3, 131073, 851968, 3, 131074, 720896, 4, 196609, 786432, 4, -4, 917504, 4, 720900, 458752, 3, 786431, 131072, 1, 720896, 131072, 1, 720897, 655360, 3, 720898, 655360, 3, 720899, 655360, 3, 458756, 655360, 3, 524292, 655360, 3, 589828, 655360, 3, 655364, 655360, 3, 720891, 131072, 1, 655355, 720896, 6, 655356, 720896, 6, 655357, 720896, 6, 655358, 720896, 6, 655359, 720896, 6, 589824, 720896, 6, 655360, 720896, 6, 720895, 720896, 6, 524288, 720896, 6, 458752, 720896, 6, 524287, 720896, 6, 524286, 720896, 6, 589822, 720896, 6, 589823, 720896, 6, 524285, 720896, 6, 589820, 720896, 6, 589819, 720896, 6, 589821, 720896, 6, 524284, 720896, 6, 524283, 720896, 6, 524282, 720896, 6, 524281, 720896, 6, 589817, 720896, 6, 589816, 720896, 6, 655352, 720896, 6, 458745, 720896, 6, 458746, 720896, 6, 458747, 720896, 6, 393218, 720896, 6, 393217, 720896, 6, 458753, 720896, 6, 458754, 720896, 6, 196610, 720896, 6, 262146, 720896, 6, 262145, 720896, 6, 327681, 720896, 6, 327682, 720896, 6, 262144, 720896, 6, 327679, 720896, 6, 262143, 720896, 6, 196608, 720896, 6, 327674, 720896, 6, 393211, 720896, 6, 393210, 720896, 6, 327675, 720896, 6, 327676, 720896, 6, 262140, 720896, 6, 196604, 720896, 6, -9, 720896, 6, -7, 720896, 6, -6, 720896, 6, -5, 720896, 6, 65531, 720896, 6, 65530, 720896, 6, 65529, 720896, 6, 65532, 720896, 6, 131068, 720896, 6, 131067, 720896, 6, 131066, 720896, 6, 131072, 720896, 6, 196607, 720896, 6, 131071, 720896, 6, 65535, 720896, 6, -1, 720896, 6, -65536, 655360, 4, -65535, 655360, 4, -65534, 655360, 4, -65533, 720896, 6, 3, 720896, 6, 65539, 720896, 6, 1, 720896, 6, 0, 720896, 6, 65536, 720896, 6)
+layer_1/name = "Wall"
+layer_1/z_index = 2
+layer_1/tile_data = PackedInt32Array(589814, 851968, 6, 655350, 851968, 6, 720886, 851968, 6, 524278, 851968, 6, 458742, 851968, 6, 393206, 851968, 6, 327670, 851968, 6, 262134, 851968, 6, 196598, 851968, 6, 131062, 851968, 6, 65526, 851968, 6, -10, 851968, 6, -65532, 983040, 6, 4, 983040, 6, 65540, 983040, 6, 131076, 983040, 6, 196612, 983040, 6, 262148, 983040, 6, 327684, 983040, 6, 393220, 983040, 6, 458756, 983040, 6, 524292, 983040, 6, 589828, 983040, 6, 655364, 983040, 6, 720900, 983040, 7, -196604, 983040, 5, -131068, 524288, 5, -131082, 851968, 5, 786422, 851968, 7, 720899, 917504, 7, 720898, 917504, 7, 720897, 917504, 7, 720896, 917504, 7, 786431, 917504, 7, 786430, 917504, 7, 786429, 917504, 7, 786428, 917504, 7, 786427, 917504, 7, 786426, 917504, 7, 786425, 917504, 7, 786424, 917504, 7, 786423, 917504, 7, -65546, 393216, 5)
+layer_2/name = "Bg"
+layer_2/z_index = -2
+layer_2/tile_data = PackedInt32Array(-65537, 458752, 5, -131072, 458752, 5, -131071, 458752, 5, -131070, 458752, 5, -131069, 458752, 5, -65545, 458752, 5, -65544, 458752, 5, -65543, 458752, 5, -65542, 458752, 5, -65541, 458752, 5, -131068, 524288, 5, -65546, 393216, 5, -131081, 393216, 0, -131080, 393216, 0, -131079, 393216, 0, -131078, 393216, 0, -131077, 393216, 0, -131076, 393216, 0, -131075, 393216, 0, -131074, 393216, 0, -131073, 393216, 0, -196608, 393216, 0, -196607, 393216, 0, -196606, 393216, 0, -196605, 393216, 0)
