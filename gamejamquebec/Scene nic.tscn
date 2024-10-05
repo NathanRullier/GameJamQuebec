@@ -1,3 +1,27 @@
-[gd_scene format=3 uid="uid://bo7plbm2b2xcf"]
+[gd_scene load_steps=5 format=3 uid="uid://bo7plbm2b2xcf"]
+
+[ext_resource type="Texture2D" uid="uid://bsbscumll0c83" path="res://Level design/Room 0 Hero.png" id="1_7ep0r"]
+[ext_resource type="Texture2D" uid="uid://dt16s4ybbpqfq" path="res://Level design/Room 1 Hero.png" id="2_qx6dr"]
+[ext_resource type="Texture2D" uid="uid://ogsksa125ukq" path="res://Level design/Room 2 Hero.png.png" id="3_f71rg"]
+[ext_resource type="Texture2D" uid="uid://chpo583bdwpiq" path="res://Level design/Room 2 Historien.png.png" id="4_xkn3w"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Room0Hero" type="Sprite2D" parent="."]
+position = Vector2(232, 208)
+texture = ExtResource("1_7ep0r")
+
+[node name="Room1Hero" type="Sprite2D" parent="."]
+position = Vector2(384, 232)
+scale = Vector2(4, 4)
+texture = ExtResource("2_qx6dr")
+
+[node name="Room2Hero_png" type="Sprite2D" parent="."]
+position = Vector2(568, 224)
+scale = Vector2(4, 4)
+texture = ExtResource("3_f71rg")
+
+[node name="Room2Historien_png" type="Sprite2D" parent="."]
+position = Vector2(568, 224)
+scale = Vector2(4, 4)
+texture = ExtResource("4_xkn3w")
