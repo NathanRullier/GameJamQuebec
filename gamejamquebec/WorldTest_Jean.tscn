@@ -1,127 +1,43 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmx3fd6ews7d"]
+[gd_scene load_steps=5 format=3 uid="uid://cmx3fd6ews7d"]
 
 [ext_resource type="Script" path="res://world_test_jean.gd" id="1_5gcui"]
 [ext_resource type="Texture2D" uid="uid://dxhonshdm0cdb" path="res://World/GrassBackground.png" id="1_7f7je"]
-[ext_resource type="PackedScene" path="res://Player/Player.tscn" id="2_6gnlm"]
-[ext_resource type="PackedScene" path="res://World/Bush.tscn" id="3_80sm4"]
-[ext_resource type="PackedScene" path="res://World/Grass.tscn" id="4_tq5h7"]
-[ext_resource type="PackedScene" path="res://World/Tree.tscn" id="5_w8kx7"]
-[ext_resource type="PackedScene" path="res://Enemies/Bat.tscn" id="6_buc15"]
+[ext_resource type="PackedScene" uid="uid://b5qu45fdt5ulq" path="res://Player/Player.tscn" id="2_6gnlm"]
+[ext_resource type="PackedScene" uid="uid://b1vx26sspg70f" path="res://Tiles/Wall_Bush.tscn" id="8_xwuyh"]
 
 [node name="World_Test" type="Node2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_5gcui")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(1376.5, 819)
+position = Vector2(1369, 771.5)
 scale = Vector2(3.70612, 3.82407)
 texture = ExtResource("1_7f7je")
 region_enabled = true
 region_rect = Rect2(0, 0, 752, 432)
 
-[node name="Node2D_Groupe1" type="Node2D" parent="."]
+[node name="LegendarySet" type="Node2D" parent="."]
 
-[node name="Player" parent="Node2D_Groupe1" instance=ExtResource("2_6gnlm")]
-position = Vector2(168, 80)
+[node name="PlayerLegend" parent="LegendarySet" instance=ExtResource("2_6gnlm")]
+position = Vector2(167, 69)
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Node2D_Groupe1/Player"]
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="LegendarySet/PlayerLegend"]
 remote_path = NodePath("../../../Camera2D")
 
-[node name="Bushes" type="Node2D" parent="Node2D_Groupe1"]
+[node name="Walls" type="Node2D" parent="LegendarySet"]
 
-[node name="Bush" parent="Node2D_Groupe1/Bushes" instance=ExtResource("3_80sm4")]
-position = Vector2(72, 56)
+[node name="Node2D" parent="LegendarySet/Walls" instance=ExtResource("8_xwuyh")]
+position = Vector2(82, 82)
 
-[node name="Bush2" parent="Node2D_Groupe1/Bushes" instance=ExtResource("3_80sm4")]
-position = Vector2(104, 104)
+[node name="RealitySet" type="Node2D" parent="."]
 
-[node name="Bush3" parent="Node2D_Groupe1/Bushes" instance=ExtResource("3_80sm4")]
-position = Vector2(264, 56)
+[node name="Walls" type="Node2D" parent="RealitySet"]
 
-[node name="Bush4" parent="Node2D_Groupe1/Bushes" instance=ExtResource("3_80sm4")]
-position = Vector2(216, 120)
+[node name="Node2D" parent="RealitySet/Walls" instance=ExtResource("8_xwuyh")]
+position = Vector2(114, 82)
 
-[node name="Bush5" parent="Node2D_Groupe1/Bushes" instance=ExtResource("3_80sm4")]
-position = Vector2(240, 144)
+[node name="PlayerReal" parent="RealitySet" instance=ExtResource("2_6gnlm")]
+position = Vector2(167, 69)
 
-[node name="Bush6" parent="Node2D_Groupe1/Bushes" instance=ExtResource("3_80sm4")]
-position = Vector2(176, 152)
-
-[node name="Grass" type="Node2D" parent="Node2D_Groupe1"]
-
-[node name="Grass" parent="Node2D_Groupe1/Grass" instance=ExtResource("4_tq5h7")]
-position = Vector2(48, 144)
-
-[node name="Grass2" parent="Node2D_Groupe1/Grass" instance=ExtResource("4_tq5h7")]
-position = Vector2(32, 144)
-
-[node name="Grass3" parent="Node2D_Groupe1/Grass" instance=ExtResource("4_tq5h7")]
-position = Vector2(16, 144)
-
-[node name="Grass4" parent="Node2D_Groupe1/Grass" instance=ExtResource("4_tq5h7")]
-position = Vector2(48, 128)
-
-[node name="Grass5" parent="Node2D_Groupe1/Grass" instance=ExtResource("4_tq5h7")]
-position = Vector2(32, 32)
-
-[node name="Grass6" parent="Node2D_Groupe1/Grass" instance=ExtResource("4_tq5h7")]
-position = Vector2(240, 0)
-
-[node name="Grass7" parent="Node2D_Groupe1/Grass" instance=ExtResource("4_tq5h7")]
-position = Vector2(224, 0)
-
-[node name="Grass8" parent="Node2D_Groupe1/Grass" instance=ExtResource("4_tq5h7")]
-position = Vector2(272, 112)
-
-[node name="Grass9" parent="Node2D_Groupe1/Grass" instance=ExtResource("4_tq5h7")]
-position = Vector2(256, 112)
-
-[node name="Grass10" parent="Node2D_Groupe1/Grass" instance=ExtResource("4_tq5h7")]
-position = Vector2(272, 96)
-
-[node name="Grass11" parent="Node2D_Groupe1/Grass" instance=ExtResource("4_tq5h7")]
-position = Vector2(160, 112)
-
-[node name="Trees" type="Node2D" parent="Node2D_Groupe1"]
-
-[node name="Tree" parent="Node2D_Groupe1/Trees" instance=ExtResource("5_w8kx7")]
-position = Vector2(232, 32)
-
-[node name="Tree2" parent="Node2D_Groupe1/Trees" instance=ExtResource("5_w8kx7")]
-position = Vector2(104, 160)
-
-[node name="Bat" parent="Node2D_Groupe1" instance=ExtResource("6_buc15")]
-position = Vector2(285, 77)
-
-[node name="Bat2" parent="Node2D_Groupe1" instance=ExtResource("6_buc15")]
-position = Vector2(216, 160)
-
-[node name="Bat3" parent="Node2D_Groupe1" instance=ExtResource("6_buc15")]
-position = Vector2(40, 96)
-
-[node name="Node2D_Groupe2" type="Node2D" parent="."]
-
-[node name="Bushes" type="Node2D" parent="Node2D_Groupe2"]
-
-[node name="Bush" parent="Node2D_Groupe2/Bushes" instance=ExtResource("3_80sm4")]
-position = Vector2(34, 213)
-
-[node name="Bush2" parent="Node2D_Groupe2/Bushes" instance=ExtResource("3_80sm4")]
-position = Vector2(100, 178)
-
-[node name="Bush3" parent="Node2D_Groupe2/Bushes" instance=ExtResource("3_80sm4")]
-position = Vector2(264, 56)
-
-[node name="Bush4" parent="Node2D_Groupe2/Bushes" instance=ExtResource("3_80sm4")]
-position = Vector2(216, 120)
-
-[node name="Bush5" parent="Node2D_Groupe2/Bushes" instance=ExtResource("3_80sm4")]
-position = Vector2(240, 144)
-
-[node name="Bush6" parent="Node2D_Groupe2/Bushes" instance=ExtResource("3_80sm4")]
-position = Vector2(176, 152)
-
-[node name="Player" parent="Node2D_Groupe2" instance=ExtResource("2_6gnlm")]
-position = Vector2(168, 80)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Node2D_Groupe2/Player"]
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="RealitySet/PlayerReal"]
 remote_path = NodePath("../../../Camera2D")
