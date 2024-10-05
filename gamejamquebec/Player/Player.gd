@@ -13,6 +13,7 @@ enum {
 	ATTACK
 }
 
+var can_move = true
 var state = MOVE
 #var velocity = Vector2.ZERO
 var roll_vector = Vector2.DOWN
@@ -32,15 +33,16 @@ func _ready():
 	swordHitbox.knockback_vector = roll_vector
 
 func _physics_process(delta):
-	match state:
-		MOVE:
-			move_state(delta)
-		
-		ROLL:
-			roll_state()
-		
-		ATTACK:
-			attack_state()
+	if can_move:
+		match state:
+			MOVE:
+				move_state(delta)
+			
+			ROLL:
+				roll_state()
+			
+			ATTACK:
+				attack_state()
 	
 func move_state(delta):
 	var input_vector = Vector2.ZERO

@@ -1,23 +1,32 @@
 ea4bc82a6ad023ab7ee23ee620429895
-<<<<<<< Updated upstream
-::res://::1728092763
+::res://::1728136290
 Camera2D.gd::GDScript::-1::1728090694::0::1::::<>Camera2D<>::
 Camera2D.tscn::PackedScene::-1::1728090694::0::1::::<><>::res://Camera2D.gd
-default_env.tres::Environment::5192500072003579423::1728092763::0::1::::<><>::
+camera_2d.gd::GDScript::-1::1728101662::0::1::::<>Camera2D<>::
+default_env.tres::Environment::5192500072003579423::1728135416::0::1::::<><>::
+exposition.gd::GDScript::-1::1728133334::0::1::::<>Node2D<>::
+Exposition.tscn::PackedScene::5060357607090334020::1728135416::0::1::::<><>::res://exposition.gd
+GestionGroupeNode_WorldMain.gd::GDScript::-1::1728096693::0::1::::<>Node2D<>::
 icon.png::CompressedTexture2D::4335163663788513222::1728090503::1728090725::1::::<><>::
-test_map.tscn::PackedScene::696051891602048210::1728092762::0::1::::<><>::uid://d1jowjeb0rva6::::res://Player/Player.tscn
+next_level.gd::GDScript::-1::1728109390::0::1::::<>Area2D<>::
+next_level.tscn::PackedScene::8781944366454361365::1728132897::0::1::::<><>::res://next_level.gd
+Scene nic.tscn::PackedScene::5485199268946257832::1728104890::0::1::::<><>::
 Stats.gd::GDScript::-1::1728090694::0::1::::<>Node<>::
 Stats.tscn::PackedScene::-1::1728090694::0::1::::<><>::res://Stats.gd
+test_map_1.tscn::PackedScene::696051891602048210::1728132898::0::1::::<><>::uid://d1jowjeb0rva6::::res://Player/Player.tscn<>res://camera_2d.gd<>uid://b1vx26sspg70f::::res://Tiles/Wall_Bush.tscn<>uid://dxeblt2gyhtib::::res://next_level.tscn
+test_map_2.tscn::PackedScene::2551065610432582097::1728132897::0::1::::<><>::uid://d1jowjeb0rva6::::res://Player/Player.tscn<>res://camera_2d.gd<>uid://b1vx26sspg70f::::res://Tiles/Wall_Bush.tscn<>uid://dxeblt2gyhtib::::res://next_level.tscn
 WhiteColor.gdshader::Shader::-1::1728090694::0::1::::<><>::
-World.tscn::PackedScene::4508047732490881367::1728092762::0::1::::<><>::res://World/Bush.tscn<>uid://d1jowjeb0rva6::::res://Player/Player.tscn<>uid://dxhonshdm0cdb::::res://World/GrassBackground.png<>uid://cjjiekhls4k8v::::res://World/DirtTileset.png<>uid://d4mbhglaje7yj::::res://World/CliffTileset.png<>res://World/Grass.tscn<>res://Enemies/Bat.tscn<>res://UI/HealthUI.tscn<>res://World/Tree.tscn<>res://Camera2D.tscn
-::res://Effects/::1728090725
+World.tscn::PackedScene::4508047732490881367::1728132897::0::1::::<><>::res://World/Bush.tscn<>res://GestionGroupeNode_WorldMain.gd<>uid://d1jowjeb0rva6::::res://Player/Player.tscn<>uid://dxhonshdm0cdb::::res://World/GrassBackground.png<>uid://cjjiekhls4k8v::::res://World/DirtTileset.png<>uid://d4mbhglaje7yj::::res://World/CliffTileset.png<>res://World/Grass.tscn<>res://Enemies/Bat.tscn<>res://UI/HealthUI.tscn<>res://World/Tree.tscn<>res://Camera2D.tscn
+WorldTest_Jean.tscn::PackedScene::-1::1728101662::0::1::::<><>::
+world_test_jean.gd::GDScript::-1::1728101662::0::1::::<>Node2D<>::
+::res://Effects/::1728096693
 Effect.gd::GDScript::-1::1728090694::0::1::::<>AnimatedSprite2D<>::
 EnemyDeathEffect.png::CompressedTexture2D::5244216255340946089::1728090505::1728090725::1::::<><>::
 EnemyDeathEffect.tscn::PackedScene::-1::1728090694::0::1::::<><>::res://Effects/Effect.gd<>res://Effects/EnemyDeathEffect.png<>res://Music and Sounds/EnemyDie.wav
 GrassEffect.png::CompressedTexture2D::7938500142225307804::1728090505::1728090725::1::::<><>::
 GrassEffect.tscn::PackedScene::-1::1728090694::0::1::::<><>::res://Effects/GrassEffect.png<>res://Effects/Effect.gd
 HitEffect.png::CompressedTexture2D::8705974324644477948::1728090506::1728090725::1::::<><>::
-HitEffect.tscn::PackedScene::-1::1728090694::0::1::::<><>::res://Effects/HitEffect.png<>res://Effects/Effect.gd<>res://Music and Sounds/Hit.wav
+HitEffect.tscn::PackedScene::-1::1728096693::0::1::::<><>::res://Effects/HitEffect.png<>res://Effects/Effect.gd<>res://Music and Sounds/Hit.wav
 ::res://Enemies/::1728090813
 Bat.gd::GDScript::-1::1728090813::0::1::::<>CharacterBody2D<>::
 Bat.png::CompressedTexture2D::142957296096359181::1728090506::1728090725::1::::<><>::
@@ -26,6 +35,11 @@ PlayerDetectionZone.gd::GDScript::-1::1728090694::0::1::::<>Area2D<>::
 PlayerDetectionZone.tscn::PackedScene::-1::1728090694::0::1::::<><>::res://Enemies/PlayerDetectionZone.gd
 WanderController.gd::GDScript::-1::1728090694::0::1::::<>Node2D<>::
 WanderController.tscn::PackedScene::-1::1728090694::0::1::::<><>::res://Enemies/WanderController.gd
+::res://Level design/::1728102208
+Room 0 Hero.png::CompressedTexture2D::3652981793909481182::1728101662::1728102208::1::::<><>::
+Room 0 Histo.png::CompressedTexture2D::1854364030982659753::1728101662::1728102208::1::::<><>::
+Room 1 Hero.png::CompressedTexture2D::8548439833173361314::1728101662::1728102208::1::::<><>::
+Room 1 Historien.png::CompressedTexture2D::3258041071882198749::1728101662::1728102208::1::::<><>::
 ::res://Music and Sounds/::1728090725
 EnemyDie.wav::AudioStreamWAV::1723253425653637377::1728090506::1728090725::1::::<><>::
 Evade.wav::AudioStreamWAV::1704514857118952172::1728090506::1728090725::1::::<><>::
@@ -43,10 +57,10 @@ Hurtbox.gd::GDScript::-1::1728090694::0::1::::<>Area2D<>::
 Hurtbox.tscn::PackedScene::-1::1728090694::0::1::::<><>::res://Overlap/Hurtbox.gd
 SoftCollision.gd::GDScript::-1::1728090694::0::1::::<>Area2D<>::
 SoftCollision.tscn::PackedScene::-1::1728090694::0::1::::<><>::res://Overlap/SoftCollision.gd
-::res://Player/::1728092763
+::res://Player/::1728132897
 Player.gd::GDScript::-1::1728090767::0::1::::<>CharacterBody2D<>::
 Player.png::CompressedTexture2D::1070430222987246909::1728090507::1728090725::1::::<><>::
-Player.tscn::PackedScene::9003641189788226603::1728092762::0::1::::<><>::uid://pir3g08nyrlt::::res://Player/Player.png<>res://Player/Player.gd<>res://Overlap/Hitbox.tscn<>res://Player/SwordHitbox.gd<>res://Overlap/Hurtbox.tscn<>uid://1ooe6tc4khwf::::res://Shadows/MediumShadow.png<>uid://b5082ehe1ow07::::res://Music and Sounds/Swipe.wav<>uid://yjxd06skkh4g::::res://Music and Sounds/Evade.wav<>res://WhiteColor.gdshader
+Player.tscn::PackedScene::9003641189788226603::1728132897::0::1::::<><>::uid://pir3g08nyrlt::::res://Player/Player.png<>res://Player/Player.gd<>res://Overlap/Hitbox.tscn<>res://Player/SwordHitbox.gd<>res://Overlap/Hurtbox.tscn<>uid://1ooe6tc4khwf::::res://Shadows/MediumShadow.png<>uid://b5082ehe1ow07::::res://Music and Sounds/Swipe.wav<>uid://yjxd06skkh4g::::res://Music and Sounds/Evade.wav<>res://WhiteColor.gdshader
 PlayerHurtSound.gd::GDScript::-1::1728090694::0::1::::<>AudioStreamPlayer<>::
 PlayerHurtSound.tscn::PackedScene::-1::1728090694::0::1::::<><>::res://Music and Sounds/Hurt.wav<>res://Player/PlayerHurtSound.gd
 PlayerStats.tscn::PackedScene::-1::1728090694::0::1::::<><>::res://Stats.tscn
@@ -55,11 +69,18 @@ SwordHitbox.gd::GDScript::-1::1728090694::0::1::::<>Area2D<>::
 LargeShadow.png::CompressedTexture2D::3747728882960969447::1728090507::1728090725::1::::<><>::
 MediumShadow.png::CompressedTexture2D::1854670061925193773::1728090507::1728090725::1::::<><>::
 SmallShadow.png::CompressedTexture2D::8061698801709685837::1728090507::1728090725::1::::<><>::
-::res://UI/::1728090725
+::res://Tiles/::1728132897
+Wall_Bush.tscn::PackedScene::4256128915254749495::1728132897::0::1::::<><>::uid://c5sxqxaea2ovm::::res://World/Bush.png
+Wall_Square.tscn::PackedScene::7308419711315654971::1728093699::0::1::::<><>::
+::res://UI/::1728136289
+Exposition_Hero.png::CompressedTexture2D::3641350730939942786::1728136280::1728136290::1::::<><>::
+Exposition_Historien.png::CompressedTexture2D::3065199324447586326::1728136280::1728136290::1::::<><>::
 HealthUI.gd::GDScript::-1::1728090694::0::1::::<>Control<>::
 HealthUI.tscn::PackedScene::-1::1728090694::0::1::::<><>::res://UI/HealthUI.gd<>res://UI/HeartUIFull.png<>res://UI/HeartUIEmpty.png
 HeartUIEmpty.png::CompressedTexture2D::6563258076863788514::1728090508::1728090725::1::::<><>::
 HeartUIFull.png::CompressedTexture2D::6370417555536998388::1728090508::1728090725::1::::<><>::
+TextBox_left.png::CompressedTexture2D::3468949214731576332::1728135390::1728135404::1::::<><>::
+TextBox_right.png::CompressedTexture2D::7503107221178345662::1728135390::1728135404::1::::<><>::
 ::res://World/::1728090725
 Bush.png::CompressedTexture2D::6917091747856229734::1728090508::1728090725::1::::<><>::
 Bush.tscn::PackedScene::-1::1728090694::0::1::::<><>::res://World/Bush.png<>res://Shadows/LargeShadow.png
@@ -71,75 +92,3 @@ Grass.tscn::PackedScene::-1::1728090694::0::1::::<><>::res://World/Grass.png<>re
 GrassBackground.png::CompressedTexture2D::8788930308639221399::1728090508::1728090725::1::::<><>::
 Tree.png::CompressedTexture2D::7354853440604543782::1728090508::1728090725::1::::<><>::
 Tree.tscn::PackedScene::-1::1728090694::0::1::::<><>::res://World/Tree.png<>res://Shadows/LargeShadow.png
-=======
-::res://::1728092801
-Camera2D.gd::GDScript::-1::1728092386::0::1::::<>Camera2D<>::
-Camera2D.tscn::PackedScene::-1::1728092386::0::1::::<><>::res://Camera2D.gd
-default_env.tres::Environment::5192500072003579423::1728092789::0::1::::<><>::
-icon.png::CompressedTexture2D::4335163663788513222::1728092386::1728092802::1::::<><>::
-Stats.gd::GDScript::-1::1728092386::0::1::::<>Node<>::
-Stats.tscn::PackedScene::-1::1728092386::0::1::::<><>::res://Stats.gd
-WhiteColor.gdshader::Shader::-1::1728092386::0::1::::<><>::
-World.tscn::PackedScene::4508047732490881367::1728092386::0::1::::<><>::res://World/Bush.tscn<>res://Player/Player.tscn<>uid://dxhonshdm0cdb::::res://World/GrassBackground.png<>uid://cjjiekhls4k8v::::res://World/DirtTileset.png<>uid://d4mbhglaje7yj::::res://World/CliffTileset.png<>res://World/Grass.tscn<>res://Enemies/Bat.tscn<>res://UI/HealthUI.tscn<>res://World/Tree.tscn<>res://Camera2D.tscn
-::res://Effects/::1728092418
-Effect.gd::GDScript::-1::1728092386::0::1::::<>AnimatedSprite2D<>::
-EnemyDeathEffect.png::CompressedTexture2D::5244216255340946089::1728092386::1728092802::1::::<><>::
-EnemyDeathEffect.tscn::PackedScene::-1::1728092386::0::1::::<><>::res://Effects/Effect.gd<>res://Effects/EnemyDeathEffect.png<>res://Music and Sounds/EnemyDie.wav
-GrassEffect.png::CompressedTexture2D::7938500142225307804::1728092386::1728092802::1::::<><>::
-GrassEffect.tscn::PackedScene::-1::1728092386::0::1::::<><>::res://Effects/GrassEffect.png<>res://Effects/Effect.gd
-HitEffect.png::CompressedTexture2D::8705974324644477948::1728092386::1728092802::1::::<><>::
-HitEffect.tscn::PackedScene::-1::1728092386::0::1::::<><>::res://Effects/HitEffect.png<>res://Effects/Effect.gd<>res://Music and Sounds/Hit.wav
-::res://Enemies/::1728092418
-Bat.gd::GDScript::-1::1728092386::0::1::::<>CharacterBody2D<>::
-Bat.png::CompressedTexture2D::142957296096359181::1728092386::1728092802::1::::<><>::
-Bat.tscn::PackedScene::-1::1728092386::0::1::::<><>::res://Enemies/Bat.png<>res://Shadows/SmallShadow.png<>res://Overlap/Hurtbox.tscn<>res://Enemies/Bat.gd<>res://Stats.tscn<>res://Enemies/PlayerDetectionZone.tscn<>res://Overlap/Hitbox.tscn<>res://Overlap/SoftCollision.tscn<>res://Enemies/WanderController.tscn<>res://WhiteColor.gdshader
-PlayerDetectionZone.gd::GDScript::-1::1728092386::0::1::::<>Area2D<>::
-PlayerDetectionZone.tscn::PackedScene::-1::1728092386::0::1::::<><>::res://Enemies/PlayerDetectionZone.gd
-WanderController.gd::GDScript::-1::1728092386::0::1::::<>Node2D<>::
-WanderController.tscn::PackedScene::-1::1728092386::0::1::::<><>::res://Enemies/WanderController.gd
-::res://Music and Sounds/::1728092418
-EnemyDie.wav::AudioStreamWAV::1723253425653637377::1728092386::1728092802::1::::<><>::
-Evade.wav::AudioStreamWAV::1704514857118952172::1728092386::1728092802::1::::<><>::
-Hit.wav::AudioStreamWAV::2502199763792514488::1728092386::1728092802::1::::<><>::
-Hurt.wav::AudioStreamWAV::5530467394849371939::1728092386::1728092802::1::::<><>::
-Menu Move.wav::AudioStreamWAV::4190679321200991215::1728092386::1728092802::1::::<><>::
-Menu Select.wav::AudioStreamWAV::2639999707574834118::1728092386::1728092802::1::::<><>::
-Pause.wav::AudioStreamWAV::8964786987621421591::1728092386::1728092802::1::::<><>::
-Swipe.wav::AudioStreamWAV::4545747535006386970::1728092386::1728092802::1::::<><>::
-Unpause.wav::AudioStreamWAV::7450812839269206625::1728092386::1728092802::1::::<><>::
-::res://Overlap/::1728092386
-Hitbox.gd::GDScript::-1::1728092386::0::1::::<>Area2D<>::
-Hitbox.tscn::PackedScene::-1::1728092386::0::1::::<><>::res://Overlap/Hitbox.gd
-Hurtbox.gd::GDScript::-1::1728092386::0::1::::<>Area2D<>::
-Hurtbox.tscn::PackedScene::-1::1728092386::0::1::::<><>::res://Overlap/Hurtbox.gd
-SoftCollision.gd::GDScript::-1::1728092386::0::1::::<>Area2D<>::
-SoftCollision.tscn::PackedScene::-1::1728092386::0::1::::<><>::res://Overlap/SoftCollision.gd
-::res://Player/::1728092418
-Player.gd::GDScript::-1::1728092386::0::1::::<>CharacterBody2D<>::
-Player.png::CompressedTexture2D::1070430222987246909::1728092386::1728092802::1::::<><>::
-Player.tscn::PackedScene::-1::1728092386::0::1::::<><>::res://Player/Player.png<>res://Player/Player.gd<>res://Overlap/Hitbox.tscn<>res://Player/SwordHitbox.gd<>res://Overlap/Hurtbox.tscn<>res://Shadows/MediumShadow.png<>res://Music and Sounds/Swipe.wav<>res://Music and Sounds/Evade.wav<>res://WhiteColor.gdshader
-PlayerHurtSound.gd::GDScript::-1::1728092386::0::1::::<>AudioStreamPlayer<>::
-PlayerHurtSound.tscn::PackedScene::-1::1728092386::0::1::::<><>::res://Music and Sounds/Hurt.wav<>res://Player/PlayerHurtSound.gd
-PlayerStats.tscn::PackedScene::-1::1728092386::0::1::::<><>::res://Stats.tscn
-SwordHitbox.gd::GDScript::-1::1728092386::0::1::::<>Area2D<>::
-::res://Shadows/::1728092418
-LargeShadow.png::CompressedTexture2D::3747728882960969447::1728092386::1728092802::1::::<><>::
-MediumShadow.png::CompressedTexture2D::1854670061925193773::1728092386::1728092802::1::::<><>::
-SmallShadow.png::CompressedTexture2D::8061698801709685837::1728092386::1728092802::1::::<><>::
-::res://UI/::1728092418
-HealthUI.gd::GDScript::-1::1728092386::0::1::::<>Control<>::
-HealthUI.tscn::PackedScene::-1::1728092386::0::1::::<><>::res://UI/HealthUI.gd<>res://UI/HeartUIFull.png<>res://UI/HeartUIEmpty.png
-HeartUIEmpty.png::CompressedTexture2D::6563258076863788514::1728092386::1728092802::1::::<><>::
-HeartUIFull.png::CompressedTexture2D::6370417555536998388::1728092386::1728092802::1::::<><>::
-::res://World/::1728092418
-Bush.png::CompressedTexture2D::6917091747856229734::1728092386::1728092802::1::::<><>::
-Bush.tscn::PackedScene::-1::1728092386::0::1::::<><>::res://World/Bush.png<>res://Shadows/LargeShadow.png
-CliffTileset.png::CompressedTexture2D::9219584599326231849::1728092386::1728092802::1::::<><>::
-DirtTileset.png::CompressedTexture2D::5423613775604911431::1728092386::1728092802::1::::<><>::
-Grass.gd::GDScript::-1::1728092386::0::1::::<>Node2D<>::
-Grass.png::CompressedTexture2D::4258772026518044484::1728092386::1728092802::1::::<><>::
-Grass.tscn::PackedScene::-1::1728092386::0::1::::<><>::res://World/Grass.png<>res://World/Grass.gd<>res://Overlap/Hurtbox.tscn
-GrassBackground.png::CompressedTexture2D::8788930308639221399::1728092386::1728092802::1::::<><>::
-Tree.png::CompressedTexture2D::7354853440604543782::1728092386::1728092802::1::::<><>::
-Tree.tscn::PackedScene::-1::1728092386::0::1::::<><>::res://World/Tree.png<>res://Shadows/LargeShadow.png
->>>>>>> Stashed changes

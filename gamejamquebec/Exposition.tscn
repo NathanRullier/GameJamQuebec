@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://cedjl6esa2abk"]
+
+[ext_resource type="Script" path="res://exposition.gd" id="1_tswkf"]
+[ext_resource type="Texture2D" uid="uid://br45rq2d0dw4i" path="res://UI/Exposition_Hero.png" id="2_8qtxv"]
+[ext_resource type="Texture2D" uid="uid://de5tcyfegokag" path="res://UI/TextBox_right.png" id="2_ji2xk"]
+[ext_resource type="Texture2D" uid="uid://bponc7jq455em" path="res://UI/TextBox_left.png" id="3_8ua0p"]
+[ext_resource type="Texture2D" uid="uid://bjw2nddyb41o1" path="res://UI/Exposition_Historien.png" id="4_171ob"]
+
+[sub_resource type="SystemFont" id="SystemFont_kxkgc"]
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_2o7uj"]
+font = SubResource("SystemFont_kxkgc")
+font_size = 28
+font_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_tswkf")
+
+[node name="Legende" type="Node2D" parent="."]
+
+[node name="ExpositionHero" type="Sprite2D" parent="Legende"]
+position = Vector2(192, 136)
+scale = Vector2(4.37121, 4.37121)
+texture = ExtResource("2_8qtxv")
+
+[node name="TextBox" type="Sprite2D" parent="Legende"]
+position = Vector2(-66, 192.25)
+scale = Vector2(5.87879, 3.89394)
+texture = ExtResource("2_ji2xk")
+
+[node name="Text" type="Label" parent="Legende"]
+offset_left = -248.0
+offset_top = 136.0
+offset_right = 120.0
+offset_bottom = 240.0
+label_settings = SubResource("LabelSettings_2o7uj")
+
+[node name="Historien" type="Node2D" parent="."]
+
+[node name="ExpositionHistorien" type="Sprite2D" parent="Historien"]
+position = Vector2(-156.25, 64.5)
+scale = Vector2(6.07576, 5.59091)
+texture = ExtResource("4_171ob")
+
+[node name="TextBox" type="Sprite2D" parent="Historien"]
+position = Vector2(92, 184)
+scale = Vector2(4.9697, 4.36364)
+texture = ExtResource("3_8ua0p")
+
+[node name="Text" type="Label" parent="Historien"]
+offset_left = -64.0
+offset_top = 120.0
+offset_right = 248.0
+offset_bottom = 240.0
+label_settings = SubResource("LabelSettings_2o7uj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)

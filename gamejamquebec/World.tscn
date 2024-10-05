@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" path="res://World/Bush.tscn" id="1"]
 [ext_resource type="Script" path="res://GestionGroupeNode_WorldMain.gd" id="1_ym6gk"]
-[ext_resource type="PackedScene" path="res://Player/Player.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://d1jowjeb0rva6" path="res://Player/Player.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://dxhonshdm0cdb" path="res://World/GrassBackground.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://cjjiekhls4k8v" path="res://World/DirtTileset.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://d4mbhglaje7yj" path="res://World/CliffTileset.png" id="5"]

@@ -793,7 +793,7 @@ _data = {
 "Stop": SubResource("49")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 script = ExtResource("2")
 
@@ -808,7 +808,6 @@ texture = ExtResource("1")
 hframes = 60
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 rotation = -1.5708
 shape = SubResource("1")
 
