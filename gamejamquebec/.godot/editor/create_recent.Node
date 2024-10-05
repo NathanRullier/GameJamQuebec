@@ -1,4 +1,10 @@
 Node2D
+<<<<<<< Updated upstream
+=======
+ColorRect
+RigidBody2D
+CollisionShape2D
+>>>>>>> Stashed changes
 Polygon2D
 Sprite2D
 CollisionShape2D
