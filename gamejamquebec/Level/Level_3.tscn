@@ -1146,6 +1146,10 @@ position = Vector2(800, 416)
 z_index = 3
 position = Vector2(800, 384)
 
+[node name="CanvasModulate" type="CanvasModulate" parent="Niveau 3"]
+position = Vector2(40, 72)
+color = Color(0.47788, 0.47788, 0.47788, 1)
+
 [node name="Hero POV" type="Node2D" parent="Niveau 3"]
 
 [node name="Vide" type="Node2D" parent="Niveau 3/Hero POV"]

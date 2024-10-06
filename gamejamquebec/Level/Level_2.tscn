@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://boqs8nil3ilxb" path="res://Level design/FG_Cellar Tileset_4.png" id="7_lkv5n"]
 [ext_resource type="AudioStream" uid="uid://5y3jyuvgw3cu" path="res://Sound/Scratch vinyle 2.wav" id="7_moxjm"]
 [ext_resource type="PackedScene" uid="uid://b1vx26sspg70f" path="res://Tiles/Wall_Bush.tscn" id="8_jblnd"]
-[ext_resource type="PackedScene" uid="uid://2kk7yov0jgk" path="res://next_level.tscn" id="9_ypind"]
+[ext_resource type="PackedScene" uid="uid://dxeblt2gyhtib" path="res://next_level.tscn" id="9_ypind"]
 [ext_resource type="PackedScene" uid="uid://y2p30mvjslfr" path="res://Player/Hero.tscn" id="10_dun63"]
 [ext_resource type="AudioStream" uid="uid://du4fipxt2aeeo" path="res://Musique/Historian song.wav" id="11_e38s2"]
 [ext_resource type="PackedScene" uid="uid://cfnpedfiuo7ew" path="res://Effects/bad_switch/bad_switch.tscn" id="13_n764t"]
@@ -904,6 +904,10 @@ stream = ExtResource("7_chjm2")
 stream = ExtResource("7_moxjm")
 
 [node name="Niveau 2" type="Node2D" parent="."]
+
+[node name="CanvasModulate2" type="CanvasModulate" parent="Niveau 2"]
+position = Vector2(40, 72)
+color = Color(0.47788, 0.47788, 0.47788, 1)
 
 [node name="Murs" type="Node2D" parent="Niveau 2"]
 visible = false

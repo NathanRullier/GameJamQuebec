@@ -1,0 +1,121 @@
+[gd_scene load_steps=13 format=3 uid="uid://b06ht0i4s1bgb"]
+
+[ext_resource type="Texture2D" uid="uid://c70k612cu1oqv" path="res://Level design/FG_Cellar Tileset_6.png" id="1_g67w3"]
+[ext_resource type="Script" path="res://Level design/Light Source.gd" id="2_up01f"]
+[ext_resource type="Texture2D" uid="uid://jv1scpcl7y2v" path="res://Shadows/Light03.png" id="5_uf6f1"]
+[ext_resource type="Script" path="res://Level design/PointLight.gd" id="10_k18cf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3ame"]
+atlas = ExtResource("1_g67w3")
+region = Rect2(80, 432, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6xqv"]
+atlas = ExtResource("1_g67w3")
+region = Rect2(96, 432, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oq0hv"]
+atlas = ExtResource("1_g67w3")
+region = Rect2(112, 432, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g28fb"]
+atlas = ExtResource("1_g67w3")
+region = Rect2(128, 432, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_svkff"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3ame")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6xqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oq0hv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g28fb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_hp0if"]
+resource_name = "Idle"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_fen4t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tabjg"]
+_data = {
+"Idle": SubResource("Animation_hp0if"),
+"RESET": SubResource("Animation_fen4t")
+}
+
+[node name="Torche" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_svkff")
+frame = 1
+script = ExtResource("2_up01f")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 1, 1, 0.286275)
+texture = ExtResource("5_uf6f1")
+script = ExtResource("10_k18cf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tabjg")
+}
