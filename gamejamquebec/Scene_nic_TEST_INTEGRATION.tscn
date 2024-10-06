@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://186exk5watdl"]
+[gd_scene load_steps=14 format=3 uid="uid://186exk5watdl"]
 
 [ext_resource type="Script" path="res://test_integration_scene_nic.gd" id="1_opa6k"]
 [ext_resource type="Script" path="res://camera_2d.gd" id="2_t28q8"]
@@ -6,11 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://dt16s4ybbpqfq" path="res://Level design/Room 1 Hero.png" id="4_m5m2i"]
 [ext_resource type="Texture2D" uid="uid://ogsksa125ukq" path="res://Level design/Room 2 Hero.png.png" id="5_vpgcy"]
 [ext_resource type="Texture2D" uid="uid://chpo583bdwpiq" path="res://Level design/Room 2 Historien.png.png" id="6_li7oj"]
+[ext_resource type="AudioStream" uid="uid://bfsnf51tecsm6" path="res://Sound/portal sound2 .wav" id="7_lilud"]
 [ext_resource type="PackedScene" uid="uid://b5qu45fdt5ulq" path="res://Player/Player.tscn" id="7_lrj1q"]
 [ext_resource type="PackedScene" uid="uid://b1vx26sspg70f" path="res://Tiles/Wall_Bush.tscn" id="8_j4qmj"]
 [ext_resource type="Texture2D" uid="uid://dm0m6xwb1kgho" path="res://Tiles/FG_Cellar Tileset_3.png.png" id="9_8v5nx"]
+[ext_resource type="AudioStream" uid="uid://du4fipxt2aeeo" path="res://Musique/Historian song.wav" id="11_umku2"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ax1x"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_irexp"]
 texture = ExtResource("9_8v5nx")
 0:0/0 = 0
 1:0/0 = 0
@@ -853,9 +855,9 @@ texture = ExtResource("9_8v5nx")
 6:33/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_xl4ep"]
-sources/0 = SubResource("TileSetAtlasSource_5ax1x")
+sources/0 = SubResource("TileSetAtlasSource_irexp")
 
-[node name="Node2D2" type="Node2D"]
+[node name="Node2D3" type="Node2D"]
 script = ExtResource("1_opa6k")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -895,6 +897,9 @@ z_index = -2
 position = Vector2(568, 216)
 scale = Vector2(8, 8)
 texture = ExtResource("6_li7oj")
+
+[node name="setSwitch_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_lilud")
 
 [node name="Niveau 2" type="Node2D" parent="."]
 
@@ -1137,6 +1142,11 @@ z_index = 3
 position = Vector2(800, 384)
 
 [node name="Hero POV" type="Node2D" parent="Niveau 2"]
+
+[node name="Musique_Hero" type="AudioStreamPlayer2D" parent="Niveau 2/Hero POV"]
+stream = ExtResource("11_umku2")
+volume_db = 15.865
+autoplay = true
 
 [node name="Vide" type="Node2D" parent="Niveau 2/Hero POV"]
 position = Vector2(16, -16)
@@ -1583,6 +1593,10 @@ layer_2/tile_data = PackedInt32Array(-786438, 393216, 7, -786437, 393216, 7, -78
 position = Vector2(568, 416)
 
 [node name="Histo POV" type="Node2D" parent="Niveau 2"]
+
+[node name="Musique_Histo" type="AudioStreamPlayer2D" parent="Niveau 2/Histo POV"]
+stream = ExtResource("11_umku2")
+autoplay = true
 
 [node name="Vide" type="Node2D" parent="Niveau 2/Histo POV"]
 

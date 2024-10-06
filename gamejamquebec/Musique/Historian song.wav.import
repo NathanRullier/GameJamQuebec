@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://du4fipxt2aeeo"
+path="res://.godot/imported/Historian song.wav-0c9171cab4f33beb4b8fd1b36c3fd1ec.sample"
+
+[deps]
+
+source_file="res://Musique/Historian song.wav"
+dest_files=["res://.godot/imported/Historian song.wav-0c9171cab4f33beb4b8fd1b36c3fd1ec.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

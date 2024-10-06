@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bviaw64nbcfrw"
+path="res://.godot/imported/Scratch vinyle 1.wav-cc5c1cd2ebe3165a4424c7d697e3ab5f.sample"
+
+[deps]
+
+source_file="res://Sound/Scratch vinyle 1.wav"
+dest_files=["res://.godot/imported/Scratch vinyle 1.wav-cc5c1cd2ebe3165a4424c7d697e3ab5f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

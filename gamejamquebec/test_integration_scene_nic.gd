@@ -6,6 +6,8 @@ extends Node2D
 # Récupération des player 1 et 2 du niveau
 @onready var playerHero = $"Niveau 2/Hero POV/Player_Hero"
 @onready var playerHisto = $"Niveau 2/Histo POV/Player_Histo"
+# Récupération de l'audio pour le son du switch
+@onready var switchSound = $setSwitch_sound
 
 var active_set
 var active_player
@@ -20,7 +22,7 @@ func _ready() -> void:
 	# Initialiser le deuxième set comme inactif au démarrage
 	toggle_set(setHisto, false)
 	
-	queue_redraw()
+	#queue_redraw()
 
 
 func _process(delta):
@@ -49,6 +51,7 @@ func attempt_switch_sets():
 		
 func sets_switch():
 	TransitionScreen.transition()
+	switchSound.play()
 	await TransitionScreen.on_transition_finished
 	
 	# Inverser l'état des deux sets
@@ -60,7 +63,7 @@ func sets_switch():
 	active_player = playerHisto if active_player == playerHero else playerHero
 	hidden_player = playerHero if active_player == playerHisto else playerHisto
 	
-	queue_redraw()  # Redessiner la scène après le switch pour voir les nouvelles zones
+	#queue_redraw()  # Redessiner la scène après le switch pour voir les nouvelles zones
 
 func is_position_safe():
 	#Récupérer les obstacle du set cible (celui sur lequel on veut basculer)
