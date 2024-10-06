@@ -1,15 +1,15 @@
 extends Node2D
 
 # Récupération des Nodes 1 et 2 du niveau
-@onready var setHero = $"Niveau 2/Hero POV"
-@onready var setHisto = $"Niveau 2/Histo POV"
+@onready var setHero = $"Niveau 1/Hero POV"
+@onready var setHisto = $"Niveau 1/Histo POV"
 # Récupération des player 1 et 2 du niveau
-@onready var playerHero = $"Niveau 2/Hero POV/Player_Hero"
-@onready var playerHisto = $"Niveau 2/Histo POV/Player_Histo"
+@onready var playerHero = $"Niveau 1/Hero POV/Player_Hero"
+@onready var playerHisto = $"Niveau 1/Histo POV/Player_Histo"
 # Récupération des son et music du niveau
 @onready var switchSound = $setSwitch_sound
-@onready var musiqueHero = $"Niveau 2/Hero POV/Musique_Hero"
-@onready var musiqueHisto = $"Niveau 2/Histo POV/Musique_Histo"
+@onready var musiqueHero = $"Niveau 1/Hero POV/Musique_Hero"
+@onready var musiqueHisto = $"Niveau 1/Histo POV/Musique_Histo"
 
 @onready var bad_switch = $Bad_Switch
 
@@ -61,12 +61,11 @@ func attempt_switch_sets():
 		sets_switch()
 	else:
 		bad_switch.bad_switch()
-		$scratch_sound_2.play()
 		print("Impossible de changer de set : la position est occupée.")
 		
 func sets_switch():
 	#TransitionScreen.transition()
-	switchSound.play()
+	#switchSound.play()
 	#await TransitionScreen.on_transition_finished
 	
 	# Inverser l'état des deux sets
@@ -76,8 +75,7 @@ func sets_switch():
 	# Mettre à jour le set et le joueur actifs
 	active_set = setHisto if active_set == setHero else setHero
 	active_player = playerHisto if active_player == playerHero else playerHero
-	active_music = musiqueHisto if active_music == musiqueHero else musiqueHero
-	#transition_music(active_music)
+	transition_music(active_music)
 	#hidden_player = playerHero if active_player == playerHisto else playerHisto
 	
 	#queue_redraw()  # Redessiner la scène après le switch pour voir les nouvelles zones
@@ -110,6 +108,16 @@ func toggle_set(set_node, is_active):
 	set_node.visible = is_active
 	set_node.process_mode = Node.PROCESS_MODE_INHERIT if is_active else Node.PROCESS_MODE_DISABLED
 
+func transition_music(active_music):
+	if active_music == musiqueHero:
+		$scratch_sound_1.play()
+		active_music.set_autoplay(false)
+	else:
+		active_music = musiqueHero
+		$timer.start(2)
+		$scratch_sound_2.play()
+		await $timer.timeout
+		active_music.set_autoplay(true)
 
 func switch_transition(delta):
 	if setHero.process_mode == Node.PROCESS_MODE_INHERIT:

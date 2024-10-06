@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dt16s4ybbpqfq" path="res://Level design/Room 1 Hero.png" id="2_qx6dr"]
 [ext_resource type="Texture2D" uid="uid://ogsksa125ukq" path="res://Level design/Room 2 Hero.png.png" id="3_f71rg"]
 [ext_resource type="Texture2D" uid="uid://chpo583bdwpiq" path="res://Level design/Room 2 Historien.png.png" id="4_xkn3w"]
-[ext_resource type="PackedScene" path="res://Player/Hero.tscn" id="7_7760e"]
+[ext_resource type="PackedScene" uid="uid://y2p30mvjslfr" path="res://Player/Hero.tscn" id="7_7760e"]
 [ext_resource type="AudioStream" uid="uid://bfsnf51tecsm6" path="res://Sound/portal sound2 .wav" id="7_s1qm5"]
 [ext_resource type="AudioStream" uid="uid://bviaw64nbcfrw" path="res://Sound/Scratch vinyle 1.wav" id="8_8cxio"]
 [ext_resource type="Texture2D" uid="uid://dm0m6xwb1kgho" path="res://Tiles/FG_Cellar Tileset_3.png.png" id="8_jg6m1"]
@@ -1153,7 +1153,6 @@ position = Vector2(800, 384)
 [node name="Hero POV" type="Node2D" parent="Niveau 3"]
 
 [node name="Vide" type="Node2D" parent="Niveau 3/Hero POV"]
-visible = false
 position = Vector2(16, -16)
 
 [node name="Node2D" parent="Niveau 3/Hero POV/Vide" instance=ExtResource("9_xngyg")]
@@ -1608,7 +1607,6 @@ autoplay = true
 [node name="Histo POV" type="Node2D" parent="Niveau 3"]
 
 [node name="Vide" type="Node2D" parent="Niveau 3/Histo POV"]
-visible = false
 
 [node name="Vide" parent="Niveau 3/Histo POV/Vide" instance=ExtResource("9_xngyg")]
 position = Vector2(696, 248)
