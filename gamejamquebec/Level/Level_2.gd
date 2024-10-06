@@ -6,23 +6,27 @@ extends Node2D
 # Récupération des player 1 et 2 du niveau
 @onready var playerHero = $"Niveau 2/Hero POV/Player_Hero"
 @onready var playerHisto = $"Niveau 2/Histo POV/Player_Histo"
-# Récupération de l'audio pour le son du switch
+# Récupération des son et music du niveau
 @onready var switchSound = $setSwitch_sound
+@onready var musiqueHero = $"Niveau 2/Hero POV/Musique_Hero"
+@onready var musiqueHisto = $"Niveau 2/Histo POV/Musique_Histo"
 
 var active_set
 var active_player
-var hidden_player
+var active_music
+#var hidden_player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	active_set = setHero
 	active_player = playerHero
-	hidden_player = playerHisto
+	active_music = musiqueHero
+	#hidden_player = playerHisto
 	
 	# Initialiser le deuxième set comme inactif au démarrage
 	toggle_set(setHisto, false)
 	
-	queue_redraw()
+	#queue_redraw()
 
 
 func _process(delta):
@@ -42,8 +46,8 @@ func _input(event):
 		attempt_switch_sets()
 
 func attempt_switch_sets():
-	print("Position avant switch joueur VISIBLE:", active_player.global_position)
-	print("Position avant switch joueur CACHÉ:", hidden_player.global_position)
+	#print("Position avant switch joueur VISIBLE:", active_player.global_position)
+	#print("Position avant switch joueur CACHÉ:", hidden_player.global_position)
 	if is_position_safe():
 		sets_switch()
 	else:
@@ -51,7 +55,7 @@ func attempt_switch_sets():
 		
 func sets_switch():
 	TransitionScreen.transition()
-	switchSound.play()
+	#switchSound.play()
 	await TransitionScreen.on_transition_finished
 	
 	# Inverser l'état des deux sets
@@ -61,9 +65,10 @@ func sets_switch():
 	# Mettre à jour le set et le joueur actifs
 	active_set = setHisto if active_set == setHero else setHero
 	active_player = playerHisto if active_player == playerHero else playerHero
-	hidden_player = playerHero if active_player == playerHisto else playerHisto
+	transition_music(active_music)
+	#hidden_player = playerHero if active_player == playerHisto else playerHisto
 	
-	queue_redraw()  # Redessiner la scène après le switch pour voir les nouvelles zones
+	#queue_redraw()  # Redessiner la scène après le switch pour voir les nouvelles zones
 
 func is_position_safe():
 	#Récupérer les obstacle du set cible (celui sur lequel on veut basculer)
@@ -92,6 +97,17 @@ func is_position_safe():
 func toggle_set(set_node, is_active):
 	set_node.visible = is_active
 	set_node.process_mode = Node.PROCESS_MODE_INHERIT if is_active else Node.PROCESS_MODE_DISABLED
+
+func transition_music(active_music):
+	if active_music == musiqueHero:
+		$scratch_sound_1.play()
+		active_music.set_autoplay(false)
+	else:
+		active_music = musiqueHero
+		$timer.start(2)
+		$scratch_sound_2.play()
+		await $timer.timeout
+		active_music.set_autoplay(true)
 
 ##Fonction qui dessine en ROUGE a l'écran les vrai zone de collision
 #si on décommente on décommente aussi les queue_redraw() dans la fonction

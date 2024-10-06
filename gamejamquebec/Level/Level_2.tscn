@@ -1,14 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://cspxxvcgycerc"]
+[gd_scene load_steps=15 format=3 uid="uid://cspxxvcgycerc"]
 
-[ext_resource type="Script" path="res://Level/Level_3.gd" id="1_lqnvi"]
+[ext_resource type="Script" path="res://Level/Level_2.gd" id="1_sbuyc"]
 [ext_resource type="Script" path="res://camera_2d.gd" id="2_es20a"]
 [ext_resource type="Texture2D" uid="uid://dt16s4ybbpqfq" path="res://Level design/Room 1 Hero.png" id="4_q4l63"]
 [ext_resource type="Texture2D" uid="uid://bmohpwjpotdjh" path="res://Level design/Room 1 Historien.png" id="5_16xfq"]
+[ext_resource type="AudioStream" uid="uid://bviaw64nbcfrw" path="res://Sound/Scratch vinyle 1.wav" id="6_neja0"]
 [ext_resource type="AudioStream" uid="uid://bfsnf51tecsm6" path="res://Sound/portal sound2 .wav" id="7_chjm2"]
 [ext_resource type="Texture2D" uid="uid://boqs8nil3ilxb" path="res://Level design/FG_Cellar Tileset_4.png" id="7_lkv5n"]
+[ext_resource type="AudioStream" uid="uid://5y3jyuvgw3cu" path="res://Sound/Scratch vinyle 2.wav" id="7_moxjm"]
 [ext_resource type="PackedScene" uid="uid://b1vx26sspg70f" path="res://Tiles/Wall_Bush.tscn" id="8_jblnd"]
-[ext_resource type="PackedScene" uid="uid://dxeblt2gyhtib" path="res://next_level.tscn" id="9_ypind"]
-[ext_resource type="PackedScene" uid="uid://y2p30mvjslfr" path="res://Player/Hero.tscn" id="10_dun63"]
+[ext_resource type="PackedScene" uid="uid://2kk7yov0jgk" path="res://next_level.tscn" id="9_ypind"]
+[ext_resource type="PackedScene" path="res://Player/Hero.tscn" id="10_dun63"]
+[ext_resource type="AudioStream" uid="uid://du4fipxt2aeeo" path="res://Musique/Historian song.wav" id="11_e38s2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3qnk4"]
 texture = ExtResource("7_lkv5n")
@@ -862,7 +865,7 @@ texture = ExtResource("7_lkv5n")
 sources/0 = SubResource("TileSetAtlasSource_3qnk4")
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_lqnvi")
+script = ExtResource("1_sbuyc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1048, 816)
@@ -894,9 +897,19 @@ position = Vector2(1048, 360)
 scale = Vector2(8, 8)
 texture = ExtResource("5_16xfq")
 
+[node name="setSwitch_sound2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_chjm2")
+
+[node name="scratch_sound_1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_neja0")
+
+[node name="scratch_sound_2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_moxjm")
+
 [node name="Niveau 2" type="Node2D" parent="."]
 
 [node name="Murs" type="Node2D" parent="Niveau 2"]
+visible = false
 
 [node name="Node2D2" parent="Niveau 2/Murs" instance=ExtResource("8_jblnd")]
 z_index = 3
@@ -1181,6 +1194,7 @@ position = Vector2(976, 560)
 [node name="Hero POV" type="Node2D" parent="Niveau 2"]
 
 [node name="Vide" type="Node2D" parent="Niveau 2/Hero POV"]
+visible = false
 position = Vector2(16, -16)
 
 [node name="Node2D" parent="Niveau 2/Hero POV/Vide" instance=ExtResource("8_jblnd")]
@@ -1305,9 +1319,15 @@ position = Vector2(1048, 816)
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Niveau 2/Hero POV/Player_Hero"]
 remote_path = NodePath("../../../../Camera2D")
 
+[node name="Musique_Hero" type="AudioStreamPlayer2D" parent="Niveau 2/Hero POV"]
+stream = ExtResource("11_e38s2")
+volume_db = 16.0
+autoplay = true
+
 [node name="Histo POV" type="Node2D" parent="Niveau 2"]
 
 [node name="Vide" type="Node2D" parent="Niveau 2/Histo POV"]
+visible = false
 
 [node name="Node2D13" parent="Niveau 2/Histo POV/Vide" instance=ExtResource("8_jblnd")]
 z_index = 3
@@ -1416,3 +1436,6 @@ position = Vector2(1048, 816)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Niveau 2/Histo POV/Player_Histo"]
 remote_path = NodePath("../../../../Camera2D")
+
+[node name="Musique_Histo" type="AudioStreamPlayer2D" parent="Niveau 2/Histo POV"]
+stream = ExtResource("11_e38s2")
