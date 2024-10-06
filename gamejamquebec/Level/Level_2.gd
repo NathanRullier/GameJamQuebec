@@ -61,11 +61,12 @@ func attempt_switch_sets():
 		sets_switch()
 	else:
 		bad_switch.bad_switch()
+		$scratch_sound_2.play()
 		print("Impossible de changer de set : la position est occupée.")
 		
 func sets_switch():
 	#TransitionScreen.transition()
-	#switchSound.play()
+	switchSound.play()
 	#await TransitionScreen.on_transition_finished
 	
 	# Inverser l'état des deux sets
@@ -75,7 +76,8 @@ func sets_switch():
 	# Mettre à jour le set et le joueur actifs
 	active_set = setHisto if active_set == setHero else setHero
 	active_player = playerHisto if active_player == playerHero else playerHero
-	transition_music(active_music)
+	active_music = musiqueHisto if active_music == musiqueHero else musiqueHero
+	#transition_music(active_music)
 	#hidden_player = playerHero if active_player == playerHisto else playerHisto
 	
 	#queue_redraw()  # Redessiner la scène après le switch pour voir les nouvelles zones
@@ -108,16 +110,6 @@ func toggle_set(set_node, is_active):
 	set_node.visible = is_active
 	set_node.process_mode = Node.PROCESS_MODE_INHERIT if is_active else Node.PROCESS_MODE_DISABLED
 
-func transition_music(active_music):
-	if active_music == musiqueHero:
-		$scratch_sound_1.play()
-		active_music.set_autoplay(false)
-	else:
-		active_music = musiqueHero
-		$timer.start(2)
-		$scratch_sound_2.play()
-		await $timer.timeout
-		active_music.set_autoplay(true)
 
 func switch_transition(delta):
 	if setHero.process_mode == Node.PROCESS_MODE_INHERIT:
