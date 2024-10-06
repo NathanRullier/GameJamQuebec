@@ -793,7 +793,7 @@ _data = {
 "Stop": SubResource("49")
 }
 
-[node name="Player" type="CharacterBody2D" groups=["Player"]]
+[node name="Player2" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 script = ExtResource("2")
 

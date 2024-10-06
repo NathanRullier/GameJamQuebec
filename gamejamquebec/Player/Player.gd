@@ -45,23 +45,20 @@ func _physics_process(delta):
 				attack_state()
 	
 func move_state(delta):
-	var input_vector = Vector2.ZERO
-	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	input_vector = input_vector.normalized()
+	var input_vector = Vector2(
+	Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
+	Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	)
+	self.velocity = input_vector*delta*5000
 	
-	if input_vector != Vector2.ZERO:
-		roll_vector = input_vector
-		swordHitbox.knockback_vector = input_vector
-		animationTree.set("parameters/Idle/blend_position", input_vector)
-		animationTree.set("parameters/Run/blend_position", input_vector)
-		animationTree.set("parameters/Attack/blend_position", input_vector)
-		animationTree.set("parameters/Roll/blend_position", input_vector)
-		animationState.travel("Run")
-		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
+	if input_vector == Vector2.ZERO:
+		animationTree.get("parameters/playback").travel("Idle")
 	else:
-		animationState.travel("Idle")
-		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+	
+		animationTree.get("parameters/playback").travel("Walk")
+		animationTree.set("parameters/Walk/BlendSpace2D/blend_position", input_vector)
+		
+	
 	
 	move()
 	
