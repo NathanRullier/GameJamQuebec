@@ -11,9 +11,14 @@ extends Node2D
 @onready var musiqueHero = $"Niveau 2/Hero POV/Musique_Hero"
 @onready var musiqueHisto = $"Niveau 2/Histo POV/Musique_Histo"
 
+@onready var bad_switch = $Bad_Switch
+
 var active_set
 var active_player
 var active_music
+
+var in_switch_transition = false
+var switch_transition_speed = 0.5
 #var hidden_player
 
 # Called when the node enters the scene tree for the first time.
@@ -24,12 +29,15 @@ func _ready() -> void:
 	#hidden_player = playerHisto
 	
 	# Initialiser le deuxième set comme inactif au démarrage
-	toggle_set(setHisto, false)
-	
+	#toggle_set(setHisto, false)
+	setHisto.process_mode = Node.PROCESS_MODE_DISABLED
+	setHisto.modulate[3] = 0
 	#queue_redraw()
 
 
 func _process(delta):
+	if in_switch_transition:
+		switch_transition(delta)
 	# Synchroniser la position du joueur inactif avec le joueur actif
 	if active_player == playerHero:
 		playerHisto.global_position = playerHero.global_position
@@ -49,18 +57,20 @@ func attempt_switch_sets():
 	#print("Position avant switch joueur VISIBLE:", active_player.global_position)
 	#print("Position avant switch joueur CACHÉ:", hidden_player.global_position)
 	if is_position_safe():
+		transition_starting()
 		sets_switch()
 	else:
+		bad_switch.bad_switch()
 		print("Impossible de changer de set : la position est occupée.")
 		
 func sets_switch():
-	TransitionScreen.transition()
+	#TransitionScreen.transition()
 	#switchSound.play()
-	await TransitionScreen.on_transition_finished
+	#await TransitionScreen.on_transition_finished
 	
 	# Inverser l'état des deux sets
-	toggle_set(setHero, !setHero.visible)
-	toggle_set(setHisto, !setHisto.visible)
+	#toggle_set(setHero, !setHero.visible)
+	#toggle_set(setHisto, !setHisto.visible)
 	
 	# Mettre à jour le set et le joueur actifs
 	active_set = setHisto if active_set == setHero else setHero
@@ -108,6 +118,36 @@ func transition_music(active_music):
 		$scratch_sound_2.play()
 		await $timer.timeout
 		active_music.set_autoplay(true)
+
+func switch_transition(delta):
+	if setHero.process_mode == Node.PROCESS_MODE_INHERIT:
+		setHisto.modulate[3] += delta/switch_transition_speed
+		setHero.modulate[3] -= delta/switch_transition_speed
+		if setHisto.modulate[3] >= 1:
+			setHisto.modulate[3] = 1
+			setHero.modulate[3] = 0
+			setHero.process_mode = Node.PROCESS_MODE_DISABLED
+			setHisto.process_mode = Node.PROCESS_MODE_INHERIT
+			transition_finished()
+	else:
+		setHisto.modulate[3] -= delta/switch_transition_speed
+		setHero.modulate[3] += delta/switch_transition_speed
+		if setHero.modulate[3] >= 1:
+			setHero.modulate[3] = 1
+			setHisto.modulate[3] = 0
+			setHisto.process_mode = Node.PROCESS_MODE_DISABLED
+			setHero.process_mode = Node.PROCESS_MODE_INHERIT
+			transition_finished()
+
+func transition_starting():
+	in_switch_transition = true
+	playerHero.can_move = false
+	playerHisto.can_move = false
+
+func transition_finished():
+	in_switch_transition = false
+	playerHero.can_move = true
+	playerHisto.can_move = true
 
 ##Fonction qui dessine en ROUGE a l'écran les vrai zone de collision
 #si on décommente on décommente aussi les queue_redraw() dans la fonction

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cedjl6esa2abk"]
+[gd_scene load_steps=9 format=3 uid="uid://cedjl6esa2abk"]
 
 [ext_resource type="Script" path="res://exposition.gd" id="1_tswkf"]
 [ext_resource type="Texture2D" uid="uid://br45rq2d0dw4i" path="res://UI/Exposition_Hero.png" id="2_8qtxv"]
 [ext_resource type="Texture2D" uid="uid://de5tcyfegokag" path="res://UI/TextBox_right.png" id="2_ji2xk"]
 [ext_resource type="Texture2D" uid="uid://bponc7jq455em" path="res://UI/TextBox_left.png" id="3_8ua0p"]
 [ext_resource type="Texture2D" uid="uid://bjw2nddyb41o1" path="res://UI/Exposition_Historien.png" id="4_171ob"]
+[ext_resource type="AudioStream" uid="uid://bv57atitnr3g" path="res://Music and Sounds/Voices/computer-keyboard-typing-snippet-mono-loop-31523.mp3" id="6_ha8vm"]
 
 [sub_resource type="SystemFont" id="SystemFont_kxkgc"]
 subpixel_positioning = 0
@@ -57,3 +58,6 @@ label_settings = SubResource("LabelSettings_2o7uj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
+
+[node name="TypingSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ha8vm")
