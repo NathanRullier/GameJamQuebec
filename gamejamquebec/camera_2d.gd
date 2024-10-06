@@ -10,6 +10,7 @@ func _ready() -> void:
 	limit_left = top_left.global_position.x
 	limit_bottom = bottom_right.global_position.y
 	limit_right = bottom_right.global_position.x
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

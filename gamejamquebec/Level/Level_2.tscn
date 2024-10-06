@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cspxxvcgycerc"]
+[gd_scene load_steps=16 format=3 uid="uid://cspxxvcgycerc"]
 
 [ext_resource type="Script" path="res://Level/Level_2.gd" id="1_sbuyc"]
 [ext_resource type="Script" path="res://camera_2d.gd" id="2_es20a"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dxeblt2gyhtib" path="res://next_level.tscn" id="9_ypind"]
 [ext_resource type="PackedScene" uid="uid://y2p30mvjslfr" path="res://Player/Hero.tscn" id="10_dun63"]
 [ext_resource type="AudioStream" uid="uid://du4fipxt2aeeo" path="res://Musique/Historian song.wav" id="11_e38s2"]
+[ext_resource type="PackedScene" uid="uid://bf6fbbhcpas4" path="res://histo.tscn" id="12_sorhp"]
 [ext_resource type="PackedScene" uid="uid://cfnpedfiuo7ew" path="res://Effects/bad_switch/bad_switch.tscn" id="13_n764t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3qnk4"]
@@ -868,17 +869,17 @@ sources/0 = SubResource("TileSetAtlasSource_3qnk4")
 script = ExtResource("1_sbuyc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1048, 816)
+position = Vector2(1677.8, 1012.45)
 zoom = Vector2(2, 2)
 editor_draw_limits = true
 script = ExtResource("2_es20a")
 
 [node name="TopLeft" type="Marker2D" parent="Camera2D"]
-position = Vector2(-88, -952)
+position = Vector2(-709.796, -1148.45)
 scale = Vector2(21772.8, -13401.1)
 
 [node name="BottomRight" type="Marker2D" parent="Camera2D"]
-position = Vector2(88, 48)
+position = Vector2(-549.796, -156.454)
 
 [node name="Room1Hero" type="Sprite2D" parent="."]
 visible = false
@@ -1431,13 +1432,10 @@ layer_3/tile_data = PackedInt32Array(-1966082, 1245184, 14, -1900546, 1245184, 1
 position = Vector2(1048, -88)
 scale = Vector2(2, 2)
 
-[node name="Player_Histo" parent="Niveau 2/Histo POV" instance=ExtResource("10_dun63")]
-position = Vector2(1048, 816)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Niveau 2/Histo POV/Player_Histo"]
-remote_path = NodePath("../../../../Camera2D")
-
 [node name="Musique_Histo" type="AudioStreamPlayer2D" parent="Niveau 2/Histo POV"]
 stream = ExtResource("11_e38s2")
+
+[node name="Player_Histo" parent="Niveau 2/Histo POV" instance=ExtResource("12_sorhp")]
+position = Vector2(1048, 816)
 
 [node name="Bad_Switch" parent="." instance=ExtResource("13_n764t")]
