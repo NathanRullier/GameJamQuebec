@@ -218,7 +218,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1giw5")
 }],
-"loop": true,
+"loop": false,
 "name": &"Idle Right",
 "speed": 10.0
 }, {
@@ -602,7 +602,7 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/asd = false
 parameters/Idle/BlendSpace2D/blend_position = Vector2(0.0284035, 0.00512815)
 parameters/Idle/TimeScale/scale = 1.0
-parameters/Walk/BlendSpace2D/blend_position = Vector2(-0.0107738, 0.244635)
+parameters/Walk/BlendSpace2D/blend_position = Vector2(-0.347698, -0.0884956)
 parameters/Walk/TimeScale/scale = 1.0
 
 [node name="HitboxPivot" type="Marker2D" parent="."]
