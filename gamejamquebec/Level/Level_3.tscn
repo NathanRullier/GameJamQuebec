@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bo7plbm2b2xcf"]
+[gd_scene load_steps=15 format=3 uid="uid://bo7plbm2b2xcf"]
 
 [ext_resource type="Script" path="res://Level/Level_3.gd" id="1_6mf3n"]
 [ext_resource type="Texture2D" uid="uid://bsbscumll0c83" path="res://Level design/Room 0 Hero.png" id="1_7ep0r"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://chpo583bdwpiq" path="res://Level design/Room 2 Historien.png.png" id="4_xkn3w"]
 [ext_resource type="PackedScene" uid="uid://y2p30mvjslfr" path="res://Player/Hero.tscn" id="7_7760e"]
 [ext_resource type="AudioStream" uid="uid://bfsnf51tecsm6" path="res://Sound/portal sound2 .wav" id="7_s1qm5"]
-[ext_resource type="AudioStream" uid="uid://bviaw64nbcfrw" path="res://Sound/Scratch vinyle 1.wav" id="8_8cxio"]
 [ext_resource type="Texture2D" uid="uid://dm0m6xwb1kgho" path="res://Tiles/FG_Cellar Tileset_3.png.png" id="8_jg6m1"]
 [ext_resource type="AudioStream" uid="uid://5y3jyuvgw3cu" path="res://Sound/Scratch vinyle 2.wav" id="9_j4jbb"]
 [ext_resource type="PackedScene" uid="uid://b1vx26sspg70f" path="res://Tiles/Wall_Bush.tscn" id="9_xngyg"]
@@ -859,7 +858,7 @@ texture = ExtResource("8_jg6m1")
 [sub_resource type="TileSet" id="TileSet_8sgab"]
 sources/0 = SubResource("TileSetAtlasSource_3qnk4")
 
-[node name="Node2D" type="Node2D"]
+[node name="Lvl_3" type="Node2D"]
 script = ExtResource("1_6mf3n")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -902,9 +901,6 @@ texture = ExtResource("4_xkn3w")
 
 [node name="setSwitch_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_s1qm5")
-
-[node name="scratch_sound_1" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_8cxio")
 
 [node name="scratch_sound_2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_j4jbb")

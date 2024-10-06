@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://cspxxvcgycerc"]
+[gd_scene load_steps=15 format=3 uid="uid://cspxxvcgycerc"]
 
 [ext_resource type="Script" path="res://Level/Level_2.gd" id="1_sbuyc"]
 [ext_resource type="Script" path="res://camera_2d.gd" id="2_es20a"]
 [ext_resource type="Texture2D" uid="uid://dt16s4ybbpqfq" path="res://Level design/Room 1 Hero.png" id="4_q4l63"]
 [ext_resource type="Texture2D" uid="uid://bmohpwjpotdjh" path="res://Level design/Room 1 Historien.png" id="5_16xfq"]
-[ext_resource type="AudioStream" uid="uid://bviaw64nbcfrw" path="res://Sound/Scratch vinyle 1.wav" id="6_neja0"]
 [ext_resource type="AudioStream" uid="uid://bfsnf51tecsm6" path="res://Sound/portal sound2 .wav" id="7_chjm2"]
 [ext_resource type="Texture2D" uid="uid://boqs8nil3ilxb" path="res://Level design/FG_Cellar Tileset_4.png" id="7_lkv5n"]
 [ext_resource type="AudioStream" uid="uid://5y3jyuvgw3cu" path="res://Sound/Scratch vinyle 2.wav" id="7_moxjm"]
@@ -865,7 +864,7 @@ texture = ExtResource("7_lkv5n")
 [sub_resource type="TileSet" id="TileSet_8sgab"]
 sources/0 = SubResource("TileSetAtlasSource_3qnk4")
 
-[node name="Node2D" type="Node2D"]
+[node name="Lvl_2" type="Node2D"]
 script = ExtResource("1_sbuyc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -900,9 +899,6 @@ stream = ExtResource("7_chjm2")
 
 [node name="setSwitch_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_chjm2")
-
-[node name="scratch_sound_1" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_neja0")
 
 [node name="scratch_sound_2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_moxjm")

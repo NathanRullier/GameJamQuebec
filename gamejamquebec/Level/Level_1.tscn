@@ -1,15 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://cica7txveou7c"]
+[gd_scene load_steps=15 format=3 uid="uid://cica7txveou7c"]
 
 [ext_resource type="Script" path="res://Level/Level_1.gd" id="1_yq3kg"]
 [ext_resource type="Script" path="res://camera_2d.gd" id="2_clste"]
 [ext_resource type="AudioStream" uid="uid://bfsnf51tecsm6" path="res://Sound/portal sound2 .wav" id="3_n08sk"]
-[ext_resource type="AudioStream" uid="uid://bviaw64nbcfrw" path="res://Sound/Scratch vinyle 1.wav" id="6_5qaws"]
 [ext_resource type="AudioStream" uid="uid://5y3jyuvgw3cu" path="res://Sound/Scratch vinyle 2.wav" id="7_0tdae"]
 [ext_resource type="Texture2D" uid="uid://c70k612cu1oqv" path="res://Level design/FG_Cellar Tileset_6.png" id="7_aesw0"]
 [ext_resource type="PackedScene" uid="uid://b1vx26sspg70f" path="res://Tiles/Wall_Bush.tscn" id="8_xygp5"]
 [ext_resource type="PackedScene" uid="uid://y2p30mvjslfr" path="res://Player/Hero.tscn" id="10_hc0cv"]
 [ext_resource type="AudioStream" uid="uid://du4fipxt2aeeo" path="res://Musique/Historian song.wav" id="11_17ivj"]
-[ext_resource type="PackedScene" uid="uid://dxeblt2gyhtib" path="res://next_level.tscn" id="12_hj8nr"]
+[ext_resource type="PackedScene" uid="uid://2kk7yov0jgk" path="res://next_level.tscn" id="12_hj8nr"]
 [ext_resource type="Texture2D" uid="uid://bsbscumll0c83" path="res://Level design/Room 0 Hero.png" id="12_w2w0u"]
 [ext_resource type="PackedScene" uid="uid://cfnpedfiuo7ew" path="res://Effects/bad_switch/bad_switch.tscn" id="13_aswtl"]
 [ext_resource type="Texture2D" uid="uid://1ojds8yxiq1f" path="res://Level design/Room 0 Histo.png" id="13_dl4jm"]
@@ -880,7 +879,7 @@ texture = ExtResource("7_aesw0")
 [sub_resource type="TileSet" id="TileSet_8sgab"]
 sources/0 = SubResource("TileSetAtlasSource_3qnk4")
 
-[node name="Node2D" type="Node2D"]
+[node name="Lvl_1" type="Node2D"]
 script = ExtResource("1_yq3kg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -898,12 +897,6 @@ position = Vector2(208, 40)
 
 [node name="setSwitch_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_n08sk")
-
-[node name="setSwitch_sound2" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_n08sk")
-
-[node name="scratch_sound_1" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_5qaws")
 
 [node name="scratch_sound_2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_0tdae")
