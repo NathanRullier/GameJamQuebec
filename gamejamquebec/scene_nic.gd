@@ -1,15 +1,15 @@
 extends Node2D
 
 # Récupération des Nodes 1 et 2 du niveau
-@onready var setHero = $"Niveau 3/Hero POV"
-@onready var setHisto = $"Niveau 3/Histo POV"
+@onready var setHero = $"Niveau 2/Hero POV"
+@onready var setHisto = $"Niveau 2/Histo POV"
 # Récupération des player 1 et 2 du niveau
-@onready var playerHero = $"Niveau 3/Hero POV/Player_Hero"
-@onready var playerHisto = $"Niveau 3/Histo POV/Player_Histo"
+@onready var playerHero = $"Niveau 2/Hero POV/Player_Hero"
+@onready var playerHisto = $"Niveau 2/Histo POV/Player_Histo"
 # Récupération des son et music du niveau
 @onready var switchSound = $setSwitch_sound
-@onready var musiqueHero = $"Niveau 3/Hero POV/Musique_Hero"
-@onready var musiqueHisto = $"Niveau 3/Histo POV/Musique_Histo"
+@onready var musiqueHero = $"Niveau 2/Hero POV/Musique_Hero"
+@onready var musiqueHisto = $"Niveau 2/Histo POV/Musique_Histo"
 
 var active_set
 var active_player
