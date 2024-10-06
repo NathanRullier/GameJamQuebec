@@ -8,13 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://chpo583bdwpiq" path="res://Level design/Room 2 Historien.png.png" id="4_xkn3w"]
 [ext_resource type="PackedScene" uid="uid://y2p30mvjslfr" path="res://Player/Hero.tscn" id="7_7760e"]
 [ext_resource type="AudioStream" uid="uid://bfsnf51tecsm6" path="res://Sound/portal sound2 .wav" id="7_s1qm5"]
-[ext_resource type="Texture2D" uid="uid://dm0m6xwb1kgho" path="res://Tiles/FG_Cellar Tileset_3.png.png" id="8_jg6m1"]
 [ext_resource type="AudioStream" uid="uid://5y3jyuvgw3cu" path="res://Sound/Scratch vinyle 2.wav" id="9_j4jbb"]
 [ext_resource type="PackedScene" uid="uid://b1vx26sspg70f" path="res://Tiles/Wall_Bush.tscn" id="9_xngyg"]
+[ext_resource type="Texture2D" uid="uid://clby1fysbt13n" path="res://Level design/tiles_bill.png" id="10_f14c0"]
 [ext_resource type="AudioStream" uid="uid://du4fipxt2aeeo" path="res://Musique/Historian song.wav" id="11_25c4y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3qnk4"]
-texture = ExtResource("8_jg6m1")
+texture = ExtResource("10_f14c0")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -854,6 +854,38 @@ texture = ExtResource("8_jg6m1")
 4:33/0 = 0
 5:33/0 = 0
 6:33/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+13:24/0 = 0
+14:24/0 = 0
+15:28/0 = 0
+15:29/0 = 0
+13:30/0 = 0
+11:31/0 = 0
+13:31/0 = 0
+7:32/0 = 0
+8:32/0 = 0
+9:32/0 = 0
+12:32/0 = 0
+7:33/0 = 0
+8:33/0 = 0
+9:33/0 = 0
+13:33/0 = 0
+14:33/0 = 0
+7:34/0 = 0
+8:34/0 = 0
+9:34/0 = 0
+15:34/0 = 0
+13:35/0 = 0
+15:36/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_8sgab"]
 sources/0 = SubResource("TileSetAtlasSource_3qnk4")
@@ -1605,6 +1637,7 @@ volume_db = 16.0
 autoplay = true
 
 [node name="Histo POV" type="Node2D" parent="Niveau 3"]
+visible = false
 
 [node name="Vide" type="Node2D" parent="Niveau 3/Histo POV"]
 

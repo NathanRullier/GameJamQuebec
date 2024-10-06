@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://j6f4xe3gi4q5"]
 
-[ext_resource type="PackedScene" uid="uid://d1jowjeb0rva6" path="res://Player/Player.tscn" id="1_toc8h"]
+[ext_resource type="PackedScene" uid="uid://b5qu45fdt5ulq" path="res://Player/Player.tscn" id="1_toc8h"]
 [ext_resource type="Script" path="res://test_map_1.gd" id="1_xtmwr"]
 [ext_resource type="Script" path="res://camera_2d.gd" id="2_sjwji"]
 [ext_resource type="PackedScene" uid="uid://b1vx26sspg70f" path="res://Tiles/Wall_Bush.tscn" id="3_v20d1"]
