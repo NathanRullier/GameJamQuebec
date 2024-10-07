@@ -6,10 +6,10 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	exposition.conversation = [
-	["Hero","Allo"],
-	["Historien","Allo"],
-	["Historien","ca va?"],
-	["Hero","Oui, Merci"]
+	["Hero","Allo","ExpositionHero_1"],
+	["Historien","Allo", "ExpositionHistorien_1"],
+	["Historien","ca va?", "ExpositionHistorien_1"],
+	["Hero","Oui, Merci","ExpositionHero_2"]
 ]
 	exposition.next_dialog()
 	player.can_move = false

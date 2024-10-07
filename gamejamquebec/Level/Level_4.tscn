@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqai8artu0pkv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wq2no"]
+font_size = 300
+
+[node name="Level4" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Label" type="Label" parent="Camera2D"]
+offset_left = -672.0
+offset_top = -184.0
+offset_right = 653.0
+offset_bottom = 225.0
+text = "YOU WIN"
+label_settings = SubResource("LabelSettings_wq2no")

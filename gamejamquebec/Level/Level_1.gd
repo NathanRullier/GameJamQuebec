@@ -11,6 +11,7 @@ extends Node2D
 @onready var musiqueHero = $"Niveau 1/Hero POV/Musique_Hero"
 @onready var musiqueHisto = $"Niveau 1/Histo POV/Musique_Histo"
 
+@onready var cutScene = $CutScene
 @onready var bad_switch = $Bad_Switch
 
 var active_set
@@ -21,8 +22,20 @@ var in_switch_transition = false
 var switch_transition_speed = 0.5
 #var hidden_player
 
+var conversation = [
+	["Historien","Voici les fameuses ruines dans lesquels vous 
+	auriez trouvez la couronne du roi fou", "ExpositionHistorien"],
+	["Historien","Et comme tous les aventuriers de votre temps 
+	vous bougiez avec WASD", "ExpositionHistorien"],
+	["Hero","En effet, mais arrêter de montrer vos mensonges", "ExpositionHero"],
+	["Hero","Pour voir la verité il faut utiliser T","ExpositionHero"]
+]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	cutScene.conversation = conversation
+	cutScene.next_dialog()
+	
 	initialisation_niveau()
 	#queue_redraw()
 
@@ -157,6 +170,18 @@ func initialisation_niveau():
 			setHero.modulate[3] = 0
 		_:
 			print ("aucun Level ne match")
+
+func _on_cut_scene_end_exposition(node: Variant) -> void:
+	playerHero.can_move = true
+	playerHisto.can_move = true
+	remove_child(node)
+
+
+func _on_cut_scene_start_exposition() -> void:
+	if playerHero != null:
+		playerHero.can_move = false
+	if playerHisto != null:
+		playerHisto.can_move = false
 
 ##Fonction qui dessine en ROUGE a l'écran les vrai zone de collision
 #si on décommente on décommente aussi les queue_redraw() dans la fonction

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bkss40wu4wlr0"]
+[gd_scene load_steps=17 format=3 uid="uid://bo7plbm2b2xcf"]
 
 [ext_resource type="Script" path="res://scene_nic.gd" id="1_6mf3n"]
 [ext_resource type="Texture2D" uid="uid://bsbscumll0c83" path="res://Level design/Room 0 Hero.png" id="1_7ep0r"]
@@ -6,13 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://dt16s4ybbpqfq" path="res://Level design/Room 1 Hero.png" id="2_qx6dr"]
 [ext_resource type="Texture2D" uid="uid://ogsksa125ukq" path="res://Level design/Room 2 Hero.png.png" id="3_f71rg"]
 [ext_resource type="Texture2D" uid="uid://chpo583bdwpiq" path="res://Level design/Room 2 Historien.png.png" id="4_xkn3w"]
-[ext_resource type="PackedScene" uid="uid://b5qu45fdt5ulq" path="res://Player/Player.tscn" id="7_8du3y"]
+[ext_resource type="PackedScene" uid="uid://d1jowjeb0rva6" path="res://Player/Player.tscn" id="7_8du3y"]
 [ext_resource type="AudioStream" uid="uid://bfsnf51tecsm6" path="res://Sound/portal sound2 .wav" id="7_s1qm5"]
 [ext_resource type="AudioStream" uid="uid://bviaw64nbcfrw" path="res://Sound/Scratch vinyle 1.wav" id="8_j1wxo"]
 [ext_resource type="Texture2D" uid="uid://dm0m6xwb1kgho" path="res://Tiles/FG_Cellar Tileset_3.png.png" id="8_jg6m1"]
 [ext_resource type="AudioStream" uid="uid://du4fipxt2aeeo" path="res://Musique/Historian song.wav" id="9_82g3d"]
 [ext_resource type="AudioStream" uid="uid://5y3jyuvgw3cu" path="res://Sound/Scratch vinyle 2.wav" id="9_qpt0n"]
 [ext_resource type="PackedScene" uid="uid://b1vx26sspg70f" path="res://Tiles/Wall_Bush.tscn" id="9_xngyg"]
+[ext_resource type="PackedScene" uid="uid://cfnpedfiuo7ew" path="res://Effects/bad_switch/bad_switch.tscn" id="14_35m6h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3qnk4"]
 texture = ExtResource("8_jg6m1")
@@ -859,7 +860,7 @@ texture = ExtResource("8_jg6m1")
 [sub_resource type="TileSet" id="TileSet_8sgab"]
 sources/0 = SubResource("TileSetAtlasSource_3qnk4")
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D4" type="Node2D"]
 script = ExtResource("1_6mf3n")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -1972,3 +1973,5 @@ layer_2/tile_data = PackedInt32Array(-65537, 458752, 5, -131072, 458752, 5, -131
 
 [node name="Player_Histo" parent="Niveau 2/Histo POV" instance=ExtResource("7_8du3y")]
 position = Vector2(568, 416)
+
+[node name="Bad_Switch" parent="." instance=ExtResource("14_35m6h")]

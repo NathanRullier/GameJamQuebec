@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://camera_2d.gd" id="2_t4gsl"]
 [ext_resource type="PackedScene" uid="uid://b1vx26sspg70f" path="res://Tiles/Wall_Bush.tscn" id="3_kw58o"]
 [ext_resource type="PackedScene" uid="uid://dxeblt2gyhtib" path="res://next_level.tscn" id="4_g7m16"]
-[ext_resource type="PackedScene" uid="uid://cedjl6esa2abk" path="res://Exposition.tscn" id="5_b87he"]
+[ext_resource type="PackedScene" uid="uid://cedjl6esa2abk" path="res://CutScene/CutScene.tscn" id="5_b87he"]
 
 [node name="mapMap" type="Node2D"]
 script = ExtResource("1_vmqa7")

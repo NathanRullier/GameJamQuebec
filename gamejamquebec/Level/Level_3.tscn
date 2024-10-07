@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bo7plbm2b2xcf"]
+[gd_scene load_steps=19 format=3 uid="uid://bo7plbm2b2xcf"]
 
 [ext_resource type="Script" path="res://Level/Level_3.gd" id="1_6mf3n"]
 [ext_resource type="Texture2D" uid="uid://bsbscumll0c83" path="res://Level design/Room 0 Hero.png" id="1_7ep0r"]
@@ -6,12 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://dt16s4ybbpqfq" path="res://Level design/Room 1 Hero.png" id="2_qx6dr"]
 [ext_resource type="Texture2D" uid="uid://ogsksa125ukq" path="res://Level design/Room 2 Hero.png.png" id="3_f71rg"]
 [ext_resource type="Texture2D" uid="uid://chpo583bdwpiq" path="res://Level design/Room 2 Historien.png.png" id="4_xkn3w"]
-[ext_resource type="PackedScene" uid="uid://y2p30mvjslfr" path="res://Player/Hero.tscn" id="7_7760e"]
+[ext_resource type="PackedScene" uid="uid://dagw8v7r2dhjj" path="res://Player/Hero.tscn" id="7_7760e"]
 [ext_resource type="AudioStream" uid="uid://bfsnf51tecsm6" path="res://Sound/portal sound2 .wav" id="7_s1qm5"]
 [ext_resource type="AudioStream" uid="uid://5y3jyuvgw3cu" path="res://Sound/Scratch vinyle 2.wav" id="9_j4jbb"]
 [ext_resource type="PackedScene" uid="uid://b1vx26sspg70f" path="res://Tiles/Wall_Bush.tscn" id="9_xngyg"]
 [ext_resource type="Texture2D" uid="uid://clby1fysbt13n" path="res://Level design/tiles_bill.png" id="10_f14c0"]
 [ext_resource type="AudioStream" uid="uid://du4fipxt2aeeo" path="res://Musique/Historian song.wav" id="11_25c4y"]
+[ext_resource type="AudioStream" uid="uid://dorrxgup0fgkk" path="res://Musique/hero song vocals.wav" id="12_fdhhr"]
+[ext_resource type="PackedScene" uid="uid://cfnpedfiuo7ew" path="res://Effects/bad_switch/bad_switch.tscn" id="13_4361i"]
+[ext_resource type="PackedScene" uid="uid://dxeblt2gyhtib" path="res://next_level.tscn" id="14_i83qa"]
+[ext_resource type="PackedScene" uid="uid://dvgri7savectv" path="res://histo.tscn" id="15_nnvg2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3qnk4"]
 texture = ExtResource("10_f14c0")
@@ -891,20 +895,21 @@ texture = ExtResource("10_f14c0")
 sources/0 = SubResource("TileSetAtlasSource_3qnk4")
 
 [node name="Lvl_3" type="Node2D"]
+position = Vector2(-568, -224)
 script = ExtResource("1_6mf3n")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(568, 416)
+position = Vector2(576, 240)
 zoom = Vector2(2, 2)
 editor_draw_limits = true
 script = ExtResource("1_l2bnh")
 
 [node name="TopLeft" type="Marker2D" parent="Camera2D"]
-position = Vector2(-240, -440)
+position = Vector2(-1392, -1096)
 scale = Vector2(21772.8, -13401.1)
 
 [node name="BottomRight" type="Marker2D" parent="Camera2D"]
-position = Vector2(240, 40)
+position = Vector2(1768, 1432)
 
 [node name="Room0Hero" type="Sprite2D" parent="."]
 visible = false
@@ -1183,6 +1188,7 @@ position = Vector2(40, 72)
 color = Color(0.47788, 0.47788, 0.47788, 1)
 
 [node name="Hero POV" type="Node2D" parent="Niveau 3"]
+visible = false
 
 [node name="Vide" type="Node2D" parent="Niveau 3/Hero POV"]
 position = Vector2(16, -16)
@@ -1628,16 +1634,11 @@ layer_2/tile_data = PackedInt32Array(-786438, 393216, 7, -786437, 393216, 7, -78
 [node name="Player_Hero" parent="Niveau 3/Hero POV" instance=ExtResource("7_7760e")]
 position = Vector2(568, 416)
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Niveau 3/Hero POV/Player_Hero"]
-remote_path = NodePath("../../../../Camera2D")
-
 [node name="Musique_Hero" type="AudioStreamPlayer2D" parent="Niveau 3/Hero POV"]
-stream = ExtResource("11_25c4y")
-volume_db = 16.0
+stream = ExtResource("12_fdhhr")
 autoplay = true
 
 [node name="Histo POV" type="Node2D" parent="Niveau 3"]
-visible = false
 
 [node name="Vide" type="Node2D" parent="Niveau 3/Histo POV"]
 
@@ -2000,12 +2001,28 @@ layer_1/tile_data = PackedInt32Array(589814, 851968, 6, 655350, 851968, 6, 72088
 layer_2/name = "Bg"
 layer_2/z_index = -2
 layer_2/tile_data = PackedInt32Array(-65537, 458752, 5, -131072, 458752, 5, -131071, 458752, 5, -131070, 458752, 5, -131069, 458752, 5, -65545, 458752, 5, -65544, 458752, 5, -65543, 458752, 5, -65542, 458752, 5, -65541, 458752, 5, -131068, 524288, 5, -65546, 393216, 5, -131081, 393216, 0, -131080, 393216, 0, -131079, 393216, 0, -131078, 393216, 0, -131077, 393216, 0, -131076, 393216, 0, -131075, 393216, 0, -131074, 393216, 0, -131073, 393216, 0, -196608, 393216, 0, -196607, 393216, 0, -196606, 393216, 0, -196605, 393216, 0)
+layer_3/name = "Layer3"
+layer_3/tile_data = PackedInt32Array(-131075, 1310720, 14, -65539, 1310720, 15, -131074, 1310720, 14, -65538, 1310720, 15, -131076, 1245184, 14, -65540, 1245184, 15, -131073, 1376256, 14, -65537, 1376256, 15)
 
-[node name="Player_Histo" parent="Niveau 3/Histo POV" instance=ExtResource("7_7760e")]
+[node name="Player_Histo" parent="Niveau 3/Histo POV" groups=["Player"] instance=ExtResource("15_nnvg2")]
 position = Vector2(568, 416)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Niveau 3/Histo POV/Player_Histo"]
-remote_path = NodePath("../../../../Camera2D")
 
 [node name="Musique_Histo" type="AudioStreamPlayer2D" parent="Niveau 3/Histo POV"]
 stream = ExtResource("11_25c4y")
+volume_db = 5.0
+autoplay = true
+
+[node name="Bad_Switch" parent="." instance=ExtResource("13_4361i")]
+
+[node name="NextLevel" parent="." instance=ExtResource("14_i83qa")]
+position = Vector2(584, 24)
+scale = Vector2(4.13825, 1.97825)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -6
+offset_left = -56.0002
+offset_top = -424.0
+offset_right = -16.0002
+offset_bottom = -384.0
+scale = Vector2(44.1303, 28.0113)
+color = Color(0, 0, 0, 1)

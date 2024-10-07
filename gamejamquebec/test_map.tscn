@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://j6f4xe3gi4q5"]
+[gd_scene load_steps=4 format=3 uid="uid://bdfotjsay68da"]
 
 [ext_resource type="Script" path="res://camera_2d.gd" id="2_i6vwa"]
 [ext_resource type="PackedScene" uid="uid://b1vx26sspg70f" path="res://Tiles/Wall_Bush.tscn" id="2_qpi1n"]
-[ext_resource type="PackedScene" uid="uid://y2p30mvjslfr" path="res://Player/Hero.tscn" id="4_4giko"]
+[ext_resource type="PackedScene" uid="uid://dagw8v7r2dhjj" path="res://Player/Hero.tscn" id="4_4giko"]
 
 [node name="mapMap" type="Node2D"]
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=71 format=3 uid="uid://y2p30mvjslfr"]
+[gd_scene load_steps=86 format=3 uid="uid://dagw8v7r2dhjj"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_xu86h"]
 [ext_resource type="Texture2D" uid="uid://1ooe6tc4khwf" path="res://Shadows/MediumShadow.png" id="2_4vkgq"]
 [ext_resource type="Shader" path="res://WhiteColor.gdshader" id="3_t4kka"]
 [ext_resource type="Texture2D" uid="uid://clxydamv2a0k2" path="res://Player/Idle Left.png" id="5_h3gl3"]
 [ext_resource type="Texture2D" uid="uid://btd0qfgu4jsm5" path="res://Player/walking Left.png" id="6_vdcsk"]
+[ext_resource type="Texture2D" uid="uid://bsr6br2hk5i1w" path="res://Player/switch_animation_test.png" id="6_viwj8"]
 [ext_resource type="PackedScene" path="res://Overlap/Hitbox.tscn" id="7_j75xl"]
 [ext_resource type="Texture2D" uid="uid://c0uawyxedekhr" path="res://Player/walking Right.png" id="7_xto7v"]
 [ext_resource type="Script" path="res://Player/SwordHitbox.gd" id="8_jdk26"]
@@ -63,6 +64,46 @@ region = Rect2(256, 0, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_u0oc7"]
 atlas = ExtResource("10_l7ccl")
 region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmi4s"]
+atlas = ExtResource("6_viwj8")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ip8bh"]
+atlas = ExtResource("6_viwj8")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bau4"]
+atlas = ExtResource("6_viwj8")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l06gj"]
+atlas = ExtResource("6_viwj8")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fte0t"]
+atlas = ExtResource("6_viwj8")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fm1g8"]
+atlas = ExtResource("6_viwj8")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unh7y"]
+atlas = ExtResource("6_viwj8")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdm1y"]
+atlas = ExtResource("6_viwj8")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d22cn"]
+atlas = ExtResource("6_viwj8")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tegji"]
+atlas = ExtResource("6_viwj8")
+region = Rect2(576, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bwre0"]
 atlas = ExtResource("6_vdcsk")
@@ -221,6 +262,41 @@ animations = [{
 "loop": false,
 "name": &"Idle Right",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmi4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ip8bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bau4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l06gj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fte0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fm1g8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unh7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdm1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d22cn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tegji")
+}],
+"loop": true,
+"name": &"Switch",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -383,6 +459,34 @@ tracks/1/keys = {
 "values": [&"Idle Right"]
 }
 
+[sub_resource type="Animation" id="Animation_pqqbk"]
+resource_name = "Switch"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Switch"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
 [sub_resource type="Animation" id="Animation_78d4x"]
 resource_name = "Walk Left"
 length = 0.8
@@ -478,6 +582,7 @@ _data = {
 "Idle": SubResource("Animation_k61tn"),
 "Idle Left": SubResource("Animation_2njlm"),
 "RESET": SubResource("Animation_chofe"),
+"Switch": SubResource("Animation_pqqbk"),
 "Walk Left": SubResource("Animation_78d4x"),
 "Walk Right": SubResource("Animation_a14mn"),
 "Walk Up": SubResource("Animation_vxrjh")
@@ -509,6 +614,9 @@ nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_sqv68")
 nodes/TimeScale/position = Vector2(420, 80)
 nodes/output/position = Vector2(620, 140)
 node_connections = [&"TimeScale", 0, &"BlendSpace2D", &"output", 0, &"TimeScale"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5csqk"]
+animation = &"Switch"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pxnxy"]
 animation = &"Walk Left"
@@ -548,13 +656,21 @@ advance_mode = 2
 advance_mode = 2
 advance_condition = &"asd"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2cjis"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yow71"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lsdog"]
 states/Idle/node = SubResource("AnimationNodeBlendTree_peo82")
-states/Idle/position = Vector2(398, 100)
+states/Idle/position = Vector2(402, 98.25)
 states/Start/position = Vector2(208, 100)
+states/Switch/node = SubResource("AnimationNodeAnimation_5csqk")
+states/Switch/position = Vector2(400, 205.5)
 states/Walk/node = SubResource("AnimationNodeBlendTree_4d5ea")
 states/Walk/position = Vector2(536, 105)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_lgktv"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_ephkr"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_6xbuq")]
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_lgktv"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_ephkr"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_6xbuq"), "Idle", "Switch", SubResource("AnimationNodeStateMachineTransition_2cjis"), "Switch", "Idle", SubResource("AnimationNodeStateMachineTransition_yow71")]
 
 [sub_resource type="CapsuleShape2D" id="46"]
 radius = 6.0

@@ -1,71 +1,73 @@
-[gd_scene load_steps=9 format=3 uid="uid://cedjl6esa2abk"]
+[gd_scene load_steps=11 format=3 uid="uid://c61v6jh15lre3"]
 
-[ext_resource type="Script" path="res://CutScene/CutScene.gd" id="1_tswkf"]
-[ext_resource type="Texture2D" uid="uid://br45rq2d0dw4i" path="res://UI/Exposition_Hero.png" id="2_8qtxv"]
-[ext_resource type="Texture2D" uid="uid://de5tcyfegokag" path="res://UI/TextBox_right.png" id="2_ji2xk"]
-[ext_resource type="Texture2D" uid="uid://bponc7jq455em" path="res://UI/TextBox_left.png" id="3_8ua0p"]
-[ext_resource type="Texture2D" uid="uid://bjw2nddyb41o1" path="res://UI/Exposition_Historien.png" id="4_171ob"]
+[ext_resource type="Script" path="res://CutScene/CutScene.gd" id="1_nnryn"]
+[ext_resource type="Texture2D" uid="uid://dq4mxo7xocl73" path="res://UI/Exposition_Hero.png" id="2_8qtxv"]
+[ext_resource type="Texture2D" uid="uid://di0xtkr8b53fh" path="res://UI/TextBox_right.png" id="2_ji2xk"]
+[ext_resource type="Texture2D" uid="uid://duxjmwt5c5l82" path="res://UI/TextBox_left.png" id="3_8ua0p"]
+[ext_resource type="Texture2D" uid="uid://ckp4giehciosa" path="res://UI/Exposition_Historien.png" id="4_171ob"]
 [ext_resource type="AudioStream" uid="uid://bv57atitnr3g" path="res://Music and Sounds/Voices/computer-keyboard-typing-snippet-mono-loop-31523.mp3" id="6_ha8vm"]
 
-[sub_resource type="SystemFont" id="SystemFont_kxkgc"]
+[sub_resource type="SystemFont" id="SystemFont_ml7ut"]
 subpixel_positioning = 0
 
-[sub_resource type="LabelSettings" id="LabelSettings_2o7uj"]
-font = SubResource("SystemFont_kxkgc")
-font_size = 28
+[sub_resource type="LabelSettings" id="LabelSettings_7e26u"]
+font = SubResource("SystemFont_ml7ut")
+font_size = 150
 font_color = Color(0, 0, 0, 1)
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_tswkf")
+[sub_resource type="SystemFont" id="SystemFont_vx27g"]
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_l5lom"]
+font = SubResource("SystemFont_vx27g")
+font_size = 150
+font_color = Color(0, 0, 0, 1)
+
+[node name="Node2D2" type="Node2D"]
+scale = Vector2(0.355806, 0.355806)
+script = ExtResource("1_nnryn")
 
 [node name="Legende" type="Node2D" parent="."]
-
-[node name="ExpositionHero_1" type="Sprite2D" parent="Legende"]
 visible = false
-position = Vector2(192, 136)
-scale = Vector2(4.37121, 4.37121)
+
+[node name="ExpositionHero" type="Sprite2D" parent="Legende"]
+position = Vector2(-629.557, -224.842)
+scale = Vector2(2.24573, 2.24573)
 texture = ExtResource("2_8qtxv")
 
-[node name="ExpositionHero_2" type="Sprite2D" parent="Legende"]
-visible = false
-position = Vector2(-1105.59, 425.114)
-scale = Vector2(36.9149, 31.2583)
-texture = ExtResource("4_171ob")
-
 [node name="TextBox" type="Sprite2D" parent="Legende"]
-position = Vector2(-66, 192.25)
-scale = Vector2(5.87879, 3.89394)
-texture = ExtResource("2_ji2xk")
+position = Vector2(-404.715, -157.389)
+scale = Vector2(4.9697, 2.68182)
+texture = ExtResource("3_8ua0p")
 
 [node name="Text" type="Label" parent="Legende"]
-offset_left = -248.0
-offset_top = 136.0
-offset_right = 120.0
-offset_bottom = 240.0
-label_settings = SubResource("LabelSettings_2o7uj")
+offset_left = -1866.0
+offset_top = 764.0
+offset_right = 2046.0
+offset_bottom = 1394.0
+label_settings = SubResource("LabelSettings_7e26u")
 
 [node name="Historien" type="Node2D" parent="."]
 
-[node name="ExpositionHistorien_1" type="Sprite2D" parent="Historien"]
-visible = false
-position = Vector2(-156.25, 64.5)
-scale = Vector2(6.07576, 5.59091)
+[node name="ExpositionHistorien" type="Sprite2D" parent="Historien"]
+position = Vector2(697.01, -247.326)
+scale = Vector2(2.32305, 2.27964)
 texture = ExtResource("4_171ob")
 
 [node name="TextBox" type="Sprite2D" parent="Historien"]
-position = Vector2(92, 184)
-scale = Vector2(4.9697, 4.36364)
-texture = ExtResource("3_8ua0p")
+position = Vector2(-427.199, -22.4842)
+scale = Vector2(4.83627, 2.41902)
+texture = ExtResource("2_ji2xk")
 
 [node name="Text" type="Label" parent="Historien"]
-offset_left = -64.0
-offset_top = 120.0
-offset_right = 248.0
-offset_bottom = 240.0
-label_settings = SubResource("LabelSettings_2o7uj")
+offset_left = -1866.0
+offset_top = 764.0
+offset_right = 2001.0
+offset_bottom = 1394.0
+text = "asdasd"
+label_settings = SubResource("LabelSettings_l5lom")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
 
 [node name="TypingSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_ha8vm")

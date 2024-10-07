@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://0tr74gwkxrpf"]
+[gd_scene load_steps=20 format=4 uid="uid://0tr74gwkxrpf"]
 
 [ext_resource type="Script" path="res://CutScene/Intro.gd" id="1_ju00m"]
 [ext_resource type="Texture2D" uid="uid://di0xtkr8b53fh" path="res://UI/TextBox_right.png" id="4_rvwho"]
@@ -15,13 +15,50 @@
 [ext_resource type="AudioStream" uid="uid://dh8gn5ojdxnr8" path="res://CutScene/Intro_Sound/Intro_6.wav" id="15_otx35"]
 [ext_resource type="AudioStream" uid="uid://uol3tsnuufrf" path="res://CutScene/Intro_Sound/Intro_7.wav" id="16_0egcw"]
 
+[sub_resource type="FontFile" id="FontFile_neebx"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/123/0/ascent = 0.0
+cache/0/123/0/descent = 0.0
+cache/0/123/0/underline_position = 0.0
+cache/0/123/0/underline_thickness = 0.0
+cache/0/123/0/scale = 1.0
+cache/0/12/0/ascent = 0.0
+cache/0/12/0/descent = 0.0
+cache/0/12/0/underline_position = 0.0
+cache/0/12/0/underline_thickness = 0.0
+cache/0/12/0/scale = 1.0
+cache/0/45/0/ascent = 0.0
+cache/0/45/0/descent = 0.0
+cache/0/45/0/underline_position = 0.0
+cache/0/45/0/underline_thickness = 0.0
+cache/0/45/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/17/0/ascent = 0.0
+cache/0/17/0/descent = 0.0
+cache/0/17/0/underline_position = 0.0
+cache/0/17/0/underline_thickness = 0.0
+cache/0/17/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_jfbel"]
+font = SubResource("FontFile_neebx")
+font_size = 17
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="SystemFont" id="SystemFont_kxkgc"]
 subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_2o7uj"]
 line_spacing = 0.0
 font = SubResource("SystemFont_kxkgc")
-font_size = 28
+font_size = 17
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="AudioStreamWAV" id="AudioStreamWAV_w3rye"]
@@ -33,6 +70,7 @@ mix_rate = 48000
 script = ExtResource("1_ju00m")
 
 [node name="Images" type="Node2D" parent="."]
+scale = Vector2(0.381933, 0.381933)
 
 [node name="Scene1" type="Sprite2D" parent="Images"]
 visible = false
@@ -57,29 +95,30 @@ texture = ExtResource("9_kxycf")
 [node name="Legende" type="Node2D" parent="."]
 
 [node name="TextBox" type="Sprite2D" parent="Legende"]
-position = Vector2(-24, -32)
-scale = Vector2(1, 0.6)
+position = Vector2(-29.0512, 44.127)
+scale = Vector2(0.528072, 0.316843)
 texture = ExtResource("5_jjy4m")
 
 [node name="Text" type="Label" parent="Legende"]
-offset_left = -312.0
-offset_top = 168.0
-offset_right = 480.0
-offset_bottom = 432.0
-label_settings = SubResource("LabelSettings_2o7uj")
+offset_left = -184.0
+offset_top = 152.0
+offset_right = 232.0
+offset_bottom = 224.0
+text = "aaaa"
+label_settings = SubResource("LabelSettings_jfbel")
 
 [node name="Historien" type="Node2D" parent="."]
 
 [node name="TextBox" type="Sprite2D" parent="Historien"]
-position = Vector2(-24, -24)
-scale = Vector2(1, 0.588889)
+position = Vector2(-29.0512, 52.1269)
+scale = Vector2(0.519044, 0.305659)
 texture = ExtResource("4_rvwho")
 
 [node name="Text" type="Label" parent="Historien"]
-offset_left = -304.0
-offset_top = 168.0
-offset_right = 480.0
-offset_bottom = 432.0
+offset_left = -184.0
+offset_top = 152.0
+offset_right = 232.0
+offset_bottom = 232.0
 label_settings = SubResource("LabelSettings_2o7uj")
 justification_flags = 0
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cnfyyi5lnr5hy"]
+[gd_scene load_steps=13 format=3 uid="uid://ctkl3g6fi7atg"]
 
 [ext_resource type="Texture2D" uid="uid://c70k612cu1oqv" path="res://Level design/FG_Cellar Tileset_6.png" id="1_pgr6r"]
 [ext_resource type="Script" path="res://Level design/Light Source.gd" id="2_thvaq"]
@@ -112,6 +112,7 @@ script = ExtResource("2_thvaq")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(1, 1, 1, 0.286275)
+range_z_max = 3
 texture = ExtResource("3_0q0cu")
 script = ExtResource("4_sp8mg")
 

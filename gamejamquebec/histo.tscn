@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://bf6fbbhcpas4"]
+[gd_scene load_steps=69 format=3 uid="uid://dvgri7savectv"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_mghch"]
 [ext_resource type="Texture2D" uid="uid://1ooe6tc4khwf" path="res://Shadows/MediumShadow.png" id="1_uttb0"]
@@ -530,6 +530,8 @@ radius = 3.0
 height = 6.0
 
 [node name="player_histo" type="CharacterBody2D"]
+collision_layer = 255
+collision_mask = 255
 script = ExtResource("1_mghch")
 
 [node name="ShadowSprite" type="Sprite2D" parent="."]

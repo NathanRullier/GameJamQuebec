@@ -116,14 +116,12 @@ func switch_transition(delta):
 			transition_finished()
 
 func transition_starting():
+	#playerHero.switch()
+	#playerHisto.switch()
 	in_switch_transition = true
-	playerHero.can_move = false
-	playerHisto.can_move = false
 
 func transition_finished():
 	in_switch_transition = false
-	playerHero.can_move = true
-	playerHisto.can_move = true
 
 
 func initialisation_niveau():
